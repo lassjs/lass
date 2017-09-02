@@ -12,6 +12,7 @@ const camelcase = require('camelcase');
 const uppercamelcase = require('uppercamelcase');
 const slug = require('limax');
 const npmConf = require('npm-conf');
+const npmName = require('npm-name');
 
 const conf = npmConf();
 
@@ -30,7 +31,11 @@ module.exports = {
     name: {
       message: 'What is the name of the new package',
       default: ':folderName:',
-      validate: val => {
+      validate: async val => {
+        const availableOnNpm = await npmName(val);
+        if (!availableOnNpm) {
+          return `The package "${val}" already exists on npm`;
+        }
         return slug(val) === val
           ? true
           : `Please change the name from "${val}" to "${slug(val)}"`;
