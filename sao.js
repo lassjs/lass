@@ -15,8 +15,8 @@ const npmConf = require('npm-conf');
 
 const conf = npmConf();
 
-const defaultVersion =
-  conf.get('init-version') === 'ISC' ? 'MIT' : conf.get('init-version');
+const defaultLicense =
+  conf.get('init-license') === 'ISC' ? 'MIT' : conf.get('init-license');
 
 module.exports = {
   enforceNewFolder: true,
@@ -56,12 +56,12 @@ module.exports = {
       message: 'Choose a license',
       choices: Object.keys(spdxLicenseList),
       type: 'list',
-      default: conf.get('init-license'),
+      default: defaultLicense,
       store: true
     },
     version: {
       message: 'Choose an initial semver version',
-      default: defaultVersion,
+      default: conf.get('init-version'),
       validate: val => (semver.valid(val) ? true : 'Invalid semver version')
     },
     author: {

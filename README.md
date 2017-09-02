@@ -3,7 +3,7 @@
 </h1>
 <div align="center">
   <a href="http://slack.crocodilejs.com"><img src="http://slack.crocodilejs.com/badge.svg" alt="chat" /></a>
-  <a href="https://travis-ci.org/lassjs/lass"><img src="https://travis-ci.org/lassjs/lass.svg?branch=master" alt="build status" /></a>
+  <a href="https://semaphoreci.com/niftylettuce/lass"> <img src="https://semaphoreci.com/api/v1/niftylettuce/lass/branches/master/shields_badge.svg" alt="build status"></a>
   <a href="https://codecov.io/github/lassjs/lass"><img src="https://img.shields.io/codecov/c/github/lassjs/lass/master.svg" alt="code coverage" /></a>
   <a href="https://github.com/sindresorhus/xo"><img src="https://img.shields.io/badge/code_style-XO-5ed9c7.svg" alt="code style" /></a>
   <a href="https://github.com/prettier/prettier"><img src="https://img.shields.io/badge/styled_with-prettier-ff69b4.svg" alt="styled with prettier" /></a>

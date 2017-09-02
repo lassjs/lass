@@ -7,7 +7,13 @@ const template = path.join(__dirname, '..');
 test('defaults', async t => {
   const stream = await sao.mockPrompt(template, {
     name: 'my-package-name',
-    description: 'my project description'
+    description: 'my project description',
+    license: 'MIT',
+    version: '0.0.1',
+    author: 'Nick Baugh',
+    email: 'niftylettuce@gmail.com',
+    website: 'http://niftylettuce.com',
+    username: 'niftylettuce'
   });
   t.snapshot(stream.fileList, 'generated files');
   const content = stream.fileContents('README.md');
