@@ -9,7 +9,7 @@ test('defaults', async t => {
     name: 'my-package-name',
     description: 'my project description'
   });
-  t.snapshot(stream.fileList, 'generated files');
+  t.snapshot(stream.fileList.sort(), 'generated files');
   const content = stream.fileContents('README.md');
   t.snapshot(content, 'content of README.md');
 });
