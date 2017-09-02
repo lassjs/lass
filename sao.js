@@ -2,7 +2,7 @@ const path = require('path');
 const fs = require('fs');
 
 const githubUsernameRegex = require('github-username-regex');
-const opn = require('opn');
+// const opn = require('opn');
 const isURL = require('is-url');
 const isEmail = require('is-email');
 const semver = require('semver');
@@ -142,6 +142,7 @@ module.exports = {
       }
     }
 
+    /*
     try {
       const gh = ctx.answers.repo.replace('https://github.com/', '');
       await Promise.all(
@@ -157,6 +158,7 @@ module.exports = {
     } catch (err) {
       ctx.log.error(err.message);
     }
+    */
 
     ctx.showTip();
   }

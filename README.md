@@ -43,7 +43,6 @@
 * Automatic code formatting with [prettier][]
 * Automatic `git init`
 * Automatic `npm install` (or `yarn install` if selected)
-* Automatically opens your browser to configure GitHub, [CodeCov][], and [Travis-CI][]
 * Automatic builds, tests, and code coverage uploading to [Codecov][] with [Travis-CI][]
 * Includes git/editor configurations:
   * [.gitignore](template/gitignore)
