@@ -50,7 +50,6 @@
     "husky": "^0.14.3",
     "lint-staged": "^4.0.4",
     "nyc": "^11.1.0",
-    "path-sort": "^0.1.0",
     "prettier": "^1.6.1",
     "remark-cli": "^4.0.0",
     "remark-preset-github": "^0.0.5",
