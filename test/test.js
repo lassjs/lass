@@ -1,6 +1,7 @@
 import path from 'path';
 import test from 'ava';
 import sao from 'sao';
+import pathSort from 'path-sort';
 
 const template = path.join(__dirname, '..');
 
@@ -9,7 +10,9 @@ test('defaults', async t => {
     name: 'my-package-name',
     description: 'my project description'
   });
-  t.snapshot(stream.fileList.sort(), 'generated files');
+  // TODO: remove path-sort once this issue is resolved:
+  // <https://github.com/saojs/sao/issues/55>
+  t.snapshot(pathSort(stream.fileList), 'generated files');
   const content = stream.fileContents('README.md');
   t.snapshot(content, 'content of README.md');
 });
