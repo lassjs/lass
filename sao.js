@@ -32,6 +32,7 @@ module.exports = {
       message: 'What is the name of the new package',
       default: ':folderName:',
       validate: async val => {
+        if (process.env.NODE_ENV === 'test' && val === 'lass') return true;
         if (slug(val) !== val) {
           return `Please change the name from "${val}" to "${slug(val)}"`;
         }
