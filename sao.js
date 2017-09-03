@@ -115,7 +115,7 @@ module.exports = {
       }
     },
     trimWhitespaceMarkdown: {
-      message: 'Trim trailing whitespace in markdown files?',
+      message: 'Trim trailing whitespace in markdown files',
       type: 'confirm',
       default: true
     },
