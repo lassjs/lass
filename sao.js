@@ -113,6 +113,17 @@ module.exports = {
           ? true
           : 'Please include a valid GitHub.com URL without a trailing slash';
       }
+    },
+    trimWhitespaceMarkdown: {
+      message: 'Trim trailing whitespace in markdown files?',
+      type: 'confirm',
+      default: true
+    },
+    editorconfigIndentation: {
+      message: 'Indentation',
+      type: 'list',
+      choices: ['2 spaces', '4 spaces', 'tabs'],
+      default: '2 spaces'
     }
   },
   move: {
