@@ -32,13 +32,12 @@ module.exports = {
       message: 'What is the name of the new package',
       default: ':folderName:',
       validate: async val => {
-        const availableOnNpm = await npmName(val);
-        if (!availableOnNpm) {
-          return `The package "${val}" already exists on npm`;
+        if (slug(val) !== val) {
+          return `Please change the name from "${val}" to "${slug(val)}"`;
         }
-        return slug(val) === val
+        return (await npmName(val))
           ? true
-          : `Please change the name from "${val}" to "${slug(val)}"`;
+          : `The package "${val}" already exists on npm`;
       }
     },
     description: {
