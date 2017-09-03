@@ -113,9 +113,10 @@ To check your existing configuration, run `npm config list -l`.
 
 ## Contributors
 
-| Name           | Website                   |
-| -------------- | ------------------------- |
-| **Nick Baugh** | <http://niftylettuce.com> |
+| Name             | Website                   |
+| ---------------- | ------------------------- |
+| **Nick Baugh**   | <http://niftylettuce.com> |
+| **Pablo Varela** | <http://pablo.life>       |
 
 
 ## Trademark Notice

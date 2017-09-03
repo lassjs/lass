@@ -27,7 +27,7 @@ yarn add <%= name %>
 
 ## Usage
 
-```sh
+```js
 const <%= this.uppercamelcase(name) %> = require('<%= name %>');
 
 const <%= this.camelcase(name) %> = new <%= this.uppercamelcase(name)%>();
