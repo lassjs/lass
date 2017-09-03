@@ -1,9 +1,9 @@
 root = true
 
 [*]
-<% if (editorconfigIndentation === '2 spaces') { %>indent_style = space
-indent_size = 2<% } else if (editorconfigIndentation === '4 spaces') { %>indent_style = space
-indent_size = 4<% } else if (editorconfigIndentation === 'tabs') { %>indent_style = tab<% } %>
+<% if (indentation === '2 spaces') { %>indent_style = space
+indent_size = 2<% } else if (indentation === '4 spaces') { %>indent_style = space
+indent_size = 4<% } else if (indentation === 'tabs') { %>indent_style = tab<% } %>
 end_of_line = lf
 charset = utf-8
 trim_trailing_whitespace = true

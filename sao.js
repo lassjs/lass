@@ -119,7 +119,7 @@ module.exports = {
       type: 'confirm',
       default: true
     },
-    editorconfigIndentation: {
+    indentation: {
       message: 'Indentation',
       type: 'list',
       choices: ['2 spaces', '4 spaces', 'tabs'],
