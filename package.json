@@ -96,7 +96,7 @@
       "prettier --write --single-quote --trailing-comma none",
       "git add"
     ],
-    "*.md": ["remark -qfo", "git add"]
+    "*.md": ["remark . -qfo", "git add"]
   },
   "main": "sao.js",
   "nyc": {
