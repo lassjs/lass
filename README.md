@@ -16,7 +16,7 @@
 
 <div align="center">
   <sub>
-    A lass that fell in love with a <a href="https://github.com/ladjs/lad"><strong>Lad</strong></a>
+    A lass that fell in love with a <a href="https://github.com/ladjs/lad"><strong>lad</strong></a>
     &bull; Built by <a href="https://github.com/niftylettuce">@niftylettuce</a>
     and <a href="#contributors">contributors</a>
   </sub>
@@ -155,7 +155,7 @@ If you are seeking permission to use these trademarks, then please [contact us](
 
 [remark-contributors]: https://github.com/hughsk/remark-contributors
 
-[lad]: https://lad.js.org
+[lad]: https://github.com/ladjs/lad
 
 [node]: https://nodejs.org
 
