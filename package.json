@@ -139,6 +139,11 @@
       "no-warning-comments": "off"
     },
     "space": true,
-    "ignores": ["example.js", "example.archive.js", "template/example.js"]
+    "ignores": [
+      "example.js",
+      "example.archive.js",
+      "template/example.js",
+      "docs/**/*.js"
+    ]
   }
 }
