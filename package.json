@@ -144,7 +144,7 @@
       "example.js",
       "example.archive.js",
       "template/example.js",
-      "docs/**/*.js"
+      "config.js"
     ]
   }
 }
