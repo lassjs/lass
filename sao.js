@@ -114,7 +114,8 @@ module.exports = {
     // Because when it's published to npm
     // `.gitignore` file will be ignored!
     gitignore: '.gitignore',
-    README: 'README.md'
+    README: 'README.md',
+    package: 'package.json'
   },
   filters: {
     // exclude MIT license from being copied

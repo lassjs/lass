@@ -1,5 +1,6 @@
 {
   "name": "<%= name %>",
+  <% if (!public) { %>"private": true, <% } %>
   "description": "<%= description %>",
   "version": "<%= version %>",
   "author": "<%= author %> <<%= email %>> (<%= website%>)",
@@ -83,7 +84,6 @@
       "camelcase": "off",
       "no-warning-comments": "off"
     },
-    "space": true,
-    "ignores": ["example.js"]
+    "space": true
   }
 }

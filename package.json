@@ -140,11 +140,6 @@
       "no-warning-comments": "off"
     },
     "space": true,
-    "ignores": [
-      "example.js",
-      "example.archive.js",
-      "template/example.js",
-      "config.js"
-    ]
+    "ignores": ["config.js"]
   }
 }
