@@ -7,7 +7,7 @@ docute.init({
   nav: {
     default: [
       {
-        title: 'Scaffold a modern package boilerplate for Node',
+        title: 'Scaffold a modern package boilerplate for Node.js',
         path: '/'
       }
     ]

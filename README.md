@@ -11,7 +11,7 @@
 </div>
 <br />
 <div align="center">
-  Lass scaffolds a modern package boilerplate for <a href="https://nodejs.org">node</a>
+  Lass scaffolds a modern package boilerplate for <a href="https://nodejs.org">Node.js</a>
 </div>
 
 <div align="center">
@@ -108,7 +108,7 @@ To check your existing configuration, run `npm config list -l`.
 
 ## Related
 
-* [lad][] - Scaffold a [Koa][] webapp and API framework for [node][]
+* [lad][] - Scaffold a [Koa][] webapp and API framework for [Node.js][node]
 
 
 ## Contributors
