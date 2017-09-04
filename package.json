@@ -60,7 +60,7 @@
   "engines": {
     "node": ">=8.x"
   },
-  "homepage": "https://github.com/lassjs/lass",
+  "homepage": "https://lass.js.org",
   "keywords": [
     "ava",
     "boilerplate",
