@@ -1,7 +1,7 @@
-import test from 'ava';
+const test = require('ava');
 
-import Script from '../';
-import { beforeEach, afterEach } from './helpers';
+const Script = require('../');
+const { beforeEach, afterEach } = require('./helpers');
 
 test.beforeEach(beforeEach);
 test.afterEach(afterEach);

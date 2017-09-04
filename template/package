@@ -64,6 +64,9 @@
   "xo": {
     "extends": "prettier",
     "plugins": ["prettier"],
+    "parserOptions": {
+      "sourceType": "script"
+    },
     "rules": {
       "prettier/prettier": [
         "error",

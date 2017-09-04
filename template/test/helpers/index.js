@@ -1,4 +1,4 @@
-import Script from '../../';
+const Script = require('../../');
 
 function beforeEach(t) {
   const script = new Script({});
@@ -7,4 +7,4 @@ function beforeEach(t) {
 
 function afterEach() {}
 
-export { beforeEach, afterEach };
+module.exports = { beforeEach, afterEach };
