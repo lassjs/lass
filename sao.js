@@ -114,7 +114,6 @@ module.exports = {
     // Because when it's published to npm
     // `.gitignore` file will be ignored!
     gitignore: '.gitignore',
-    example: 'example.js',
     README: 'README.md'
   },
   filters: {
