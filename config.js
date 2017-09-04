@@ -2,7 +2,7 @@ docute.init({
   debug: true,
   title: 'Lass',
   repo: 'lassjs/lass',
-  'edit-link': 'https://github.com/lassjs/lass/tree/master/docs/',
+  'edit-link': 'https://github.com/lassjs/lass/tree/master/',
   twitter: 'niftylettuce',
   nav: {
     default: [
