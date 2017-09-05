@@ -1,5 +1,5 @@
 <h1 align="center">
-  <a href="https://lassjs.github.io/lass/"><img src="https://cdn.rawgit.com/lassjs/lass/e39cd571/media/lass.png" alt="Lass" /></a>
+  <a href="https://lass.js.org"><img src="https://cdn.rawgit.com/lassjs/lass/e39cd571/media/lass.png" alt="Lass" /></a>
 </h1>
 <div align="center">
   <a href="http://slack.crocodilejs.com"><img src="http://slack.crocodilejs.com/badge.svg" alt="chat" /></a>
@@ -11,7 +11,7 @@
 </div>
 <br />
 <div align="center">
-  Lass scaffolds a modern package boilerplate for <a href="https://nodejs.org">node</a>
+  Lass scaffolds a modern package boilerplate for <a href="https://nodejs.org">Node.js</a>
 </div>
 
 <div align="center">
@@ -28,6 +28,8 @@
 * [Features](#features)
 * [Install](#install)
 * [Usage](#usage)
+  * [Create a package](#create-a-package)
+  * [Test it](#test-it)
 * [Tips](#tips)
   * [Configuration](#configuration)
 * [Related](#related)
@@ -79,9 +81,25 @@ yarn global add lass
 
 ## Usage
 
+### Create a package
+
 ```sh
 lass new-package
 cd new-package
+```
+
+### Test it
+
+[npm][]:
+
+```sh
+npm test
+```
+
+[yarn][]:
+
+```sh
+yarn test
 ```
 
 
@@ -108,7 +126,7 @@ To check your existing configuration, run `npm config list -l`.
 
 ## Related
 
-* [lad][] - Scaffold a [Koa][] webapp and API framework for [node][]
+* [lad][] - Scaffold a [Koa][] webapp and API framework for [Node.js][node]
 
 
 ## Contributors

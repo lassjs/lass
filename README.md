@@ -28,6 +28,8 @@
 * [Features](#features)
 * [Install](#install)
 * [Usage](#usage)
+  * [Create a package](#create-a-package)
+  * [Test it](#test-it)
 * [Tips](#tips)
   * [Configuration](#configuration)
 * [Related](#related)
@@ -79,9 +81,25 @@ yarn global add lass
 
 ## Usage
 
+### Create a package
+
 ```sh
 lass new-package
 cd new-package
+```
+
+### Test it
+
+[npm][]:
+
+```sh
+npm test
+```
+
+[yarn][]:
+
+```sh
+yarn test
 ```
 
 
