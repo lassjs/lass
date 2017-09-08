@@ -88,17 +88,23 @@ module.exports = {
     },
     username: {
       message: 'What is your GitHub username or organization',
-      default: ':gitUser:',
       store: true,
+      default(answers) {
+        if (answers.name.indexOf('@') === 0)
+          return answers.name.split('/')[0].substring(1);
+        return ':gitUser';
+      },
       validate: val =>
         githubUsernameRegex.test(val) ? true : 'Invalid GitHub username'
     },
     repo: {
       message: "What is your GitHub repository's URL",
       default(answers) {
-        return `https://github.com/${slug(answers.username)}/${slug(
-          answers.name
-        )}`;
+        const name =
+          answers.name.indexOf('@') === 0
+            ? answers.name.split('/')[1]
+            : slug(answers.name);
+        return `https://github.com/${slug(answers.username)}/${name}`;
       },
       validate: val => {
         return isURL(val) &&
