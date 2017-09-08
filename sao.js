@@ -13,6 +13,7 @@ const uppercamelcase = require('uppercamelcase');
 const slug = require('limax');
 const npmConf = require('npm-conf');
 const npmName = require('npm-name');
+const isValidNpmName = require('is-valid-npm-name');
 
 const conf = npmConf();
 
@@ -33,9 +34,8 @@ module.exports = {
       default: ':folderName:',
       validate: async val => {
         if (process.env.NODE_ENV === 'test' && val === 'lass') return true;
-        if (slug(val) !== val) {
-          return `Please change the name from "${val}" to "${slug(val)}"`;
-        }
+        const check = isValidNpmName(val);
+        if (check !== true) return check;
         return (await npmName(val))
           ? true
           : `The package "${val}" already exists on npm`;

@@ -36,9 +36,17 @@ test('invalid name', async t => {
       })
     )
   );
-  t.regex(
-    error.message,
-    /Please change the name from "Foo Bar Baz Beep" to "foo-bar-baz-beep"/
+  t.regex(error.message, /package name cannot have uppercase letters/);
+});
+
+test('allows scope', async t => {
+  await t.notThrows(
+    sao.mockPrompt(
+      template,
+      Object.assign({}, defaults, {
+        name: '@foo/bar'
+      })
+    )
   );
 });
 

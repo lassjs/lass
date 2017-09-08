@@ -2145,12 +2145,6 @@ github-slugger@^1.0.0, github-slugger@^1.1.1:
   dependencies:
     emoji-regex ">=6.0.0 <=6.1.1"
 
-github-url-to-object@^4.0.0:
-  version "4.0.2"
-  resolved "https://registry.yarnpkg.com/github-url-to-object/-/github-url-to-object-4.0.2.tgz#11e206d54263b701a9e3b7cc09a55bb3886e0c97"
-  dependencies:
-    is-url "^1.1.0"
-
 github-username-regex@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/github-username-regex/-/github-username-regex-1.0.0.tgz#17356840032f904efe8d93351c7aa7e01eff21b9"
@@ -2342,7 +2336,7 @@ homedir-polyfill@^1.0.0:
   dependencies:
     parse-passwd "^1.0.0"
 
-hosted-git-info@^2.1.4:
+hosted-git-info@^2.1.4, hosted-git-info@^2.5.0:
   version "2.5.0"
   resolved "https://registry.yarnpkg.com/hosted-git-info/-/hosted-git-info-2.5.0.tgz#6d60e34b3abbc8313062c3b798ef8d901a07af3c"
 
@@ -2753,13 +2747,19 @@ is-typedarray@~1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/is-typedarray/-/is-typedarray-1.0.0.tgz#e479c80858df0c1b11ddda6940f96011fcda4a9a"
 
-is-url@^1.1.0, is-url@^1.2.1, is-url@^1.2.2:
+is-url@^1.2.1, is-url@^1.2.2:
   version "1.2.2"
   resolved "https://registry.yarnpkg.com/is-url/-/is-url-1.2.2.tgz#498905a593bf47cc2d9e7f738372bbf7696c7f26"
 
 is-utf8@^0.2.0, is-utf8@^0.2.1:
   version "0.2.1"
   resolved "https://registry.yarnpkg.com/is-utf8/-/is-utf8-0.2.1.tgz#4b0da1442104d1b336340e80797e865cf39f7d72"
+
+is-valid-npm-name@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/is-valid-npm-name/-/is-valid-npm-name-0.0.1.tgz#dae0291ecc6bc07e884ab87e6404845f27659bd8"
+  dependencies:
+    limax "^1.5.0"
 
 is-whitespace-character@^1.0.0:
   version "1.0.1"
@@ -4746,9 +4746,9 @@ remark-parse@^4.0.0:
     vfile-location "^2.0.0"
     xtend "^4.0.1"
 
-remark-preset-github@^0.0.5:
-  version "0.0.5"
-  resolved "https://registry.yarnpkg.com/remark-preset-github/-/remark-preset-github-0.0.5.tgz#60d48de1407591fd960dc378df9f07b818db24e3"
+remark-preset-github@^0.0.6:
+  version "0.0.6"
+  resolved "https://registry.yarnpkg.com/remark-preset-github/-/remark-preset-github-0.0.6.tgz#48dc9574f2ae59a94ccaee1a63a8f4f0826b0275"
   dependencies:
     remark-comment-config "^5.0.0"
     remark-contributors "^3.1.0"
@@ -4795,9 +4795,9 @@ remark-preset-github@^0.0.5:
     remark-preset-lint-recommended "^3.0.1"
     remark-retext "^3.0.0"
     remark-toc "^4.0.0"
-    remark-validate-links "^6.0.0"
+    remark-validate-links "^7.0.0"
     retext-english "^3.0.0"
-    retext-preset-github "^0.0.2"
+    retext-preset-github "^0.0.3"
     unified "^6.0.0"
 
 remark-preset-lint-recommended@^3.0.1:
@@ -4861,11 +4861,11 @@ remark-toc@^4.0.0:
     mdast-util-toc "^2.0.0"
     remark-slug "^4.0.0"
 
-remark-validate-links@^6.0.0:
-  version "6.1.0"
-  resolved "https://registry.yarnpkg.com/remark-validate-links/-/remark-validate-links-6.1.0.tgz#8b0348c9056f144737a5373b2da8aff183fe1b85"
+remark-validate-links@^7.0.0:
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/remark-validate-links/-/remark-validate-links-7.0.0.tgz#31de803ac4682ea923b68a82560810981853d110"
   dependencies:
-    github-url-to-object "^4.0.0"
+    hosted-git-info "^2.5.0"
     mdast-util-definitions "^1.0.0"
     propose "0.0.5"
     remark-slug "^4.2.1"
@@ -5032,9 +5032,9 @@ retext-indefinite-article@^1.1.0:
     unist-util-is "^2.0.0"
     unist-util-visit "^1.1.0"
 
-retext-preset-github@^0.0.2:
-  version "0.0.2"
-  resolved "https://registry.yarnpkg.com/retext-preset-github/-/retext-preset-github-0.0.2.tgz#dcebcea60e3af8cdf578e25746d31cfb2b03251b"
+retext-preset-github@^0.0.3:
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/retext-preset-github/-/retext-preset-github-0.0.3.tgz#75c88efe6bad81a6c1246253f98c76f15e6d1e3f"
   dependencies:
     retext-contractions "^2.1.0"
     retext-diacritics "^1.2.0"
