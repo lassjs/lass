@@ -125,7 +125,10 @@ module.exports = {
   },
   filters: {
     // exclude MIT license from being copied
-    LICENSE: 'license === "MIT"'
+    LICENSE: 'license === "MIT"',
+    // until this issue is resolved we need this line:
+    // <https://github.com/saojs/sao/issues/59>
+    'node_modules/**': false
   },
   post: async ctx => {
     ctx.gitInit();
