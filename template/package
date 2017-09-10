@@ -86,8 +86,10 @@
       "camelcase": "off",
       "no-warning-comments": "off"
     },<% if (indentation === '2 spaces') { %>
-    "space": true,<% } else if (indentation === '4 spaces') { %>
-    "space": 4,<% } %>
+    "space": true,
+    "tabWidth": 2,<% } else if (indentation === '4 spaces') { %>
+    "space": 4,
+    "tabWidth": 4,<% } %>
     "ignores": ["example.js"]
   }
 }
