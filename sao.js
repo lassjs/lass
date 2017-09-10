@@ -14,6 +14,7 @@ const slug = require('limax');
 const npmConf = require('npm-conf');
 const npmName = require('npm-name');
 const isValidNpmName = require('is-valid-npm-name');
+const { execSync } = require('child_process');
 
 const conf = npmConf();
 
@@ -150,6 +151,13 @@ module.exports = {
     } else {
       ctx.npmInstall();
     }
+
+    execSync(`${ctx.folderPath}/node_modules/.bin/xo . --fix`, {
+      cwd: ctx.folderPath
+    });
+    execSync('npm test', {
+      cwd: ctx.folderPath
+    });
 
     // create `LICENSE` file with license selected
     if (ctx.answers.license !== 'MIT') {
