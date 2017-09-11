@@ -25,6 +25,8 @@
 
 ## Table of Contents
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/lassjs/lass.svg)](https://greenkeeper.io/)
+
 * [Features](#features)
 * [Install](#install)
 * [Usage](#usage)
