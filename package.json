@@ -29,6 +29,7 @@
   "dependencies": {
     "cac": "^4.2.1",
     "camelcase": "^4.1.0",
+    "github-username": "^4.1.0",
     "github-username-regex": "^1.0.0",
     "is-email": "^1.0.0",
     "is-url": "^1.2.2",

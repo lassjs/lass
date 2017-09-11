@@ -14,6 +14,7 @@ const slug = require('limax');
 const npmConf = require('npm-conf');
 const npmName = require('npm-name');
 const isValidNpmName = require('is-valid-npm-name');
+const fetchGithubUsername = require('github-username');
 
 const conf = npmConf();
 
@@ -89,10 +90,15 @@ module.exports = {
     username: {
       message: 'What is your GitHub username or organization',
       store: true,
-      default(answers) {
+      default: async answers => {
         if (answers.name.indexOf('@') === 0)
           return answers.name.split('/')[0].substring(1);
-        return ':gitUser';
+        try {
+          const githubUsername = await fetchGithubUsername(answers.email);
+          return githubUsername;
+        } catch (err) {
+          return ':gitUser';
+        }
       },
       validate: val =>
         githubUsernameRegex.test(val) ? true : 'Invalid GitHub username'
