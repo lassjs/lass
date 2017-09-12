@@ -97,7 +97,7 @@ module.exports = {
           const githubUsername = await fetchGithubUsername(answers.email);
           return githubUsername;
         } catch (err) {
-          return ':gitUser';
+          return ':gitUser:';
         }
       },
       validate: val =>
