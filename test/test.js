@@ -15,6 +15,19 @@ const defaults = {
   username: 'niftylettuce'
 };
 
+test('auto detects email address from github', async t => {
+  const stream = await sao.mockPrompt(template, {
+    name: 'lass',
+    description: 'test',
+    license: 'MIT',
+    version: '0.0.1',
+    author: 'TJ',
+    email: 'tj@apex.sh',
+    website: 'https://apex.sh'
+  });
+  t.is(stream.meta.answers.username, 'tj');
+});
+
 test('defaults', async t => {
   const stream = await sao.mockPrompt(
     template,
