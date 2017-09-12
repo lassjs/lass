@@ -33,7 +33,7 @@
     "github-username-regex": "^1.0.0",
     "is-email": "^1.0.0",
     "is-url": "^1.2.2",
-    "is-valid-npm-name": "^0.0.1",
+    "is-valid-npm-name": "^0.0.3",
     "limax": "^1.5.0",
     "npm-conf": "^1.1.2",
     "npm-name": "^3.1.0",

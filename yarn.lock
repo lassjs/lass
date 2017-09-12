@@ -2768,9 +2768,9 @@ is-utf8@^0.2.0, is-utf8@^0.2.1:
   version "0.2.1"
   resolved "https://registry.yarnpkg.com/is-utf8/-/is-utf8-0.2.1.tgz#4b0da1442104d1b336340e80797e865cf39f7d72"
 
-is-valid-npm-name@^0.0.1:
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/is-valid-npm-name/-/is-valid-npm-name-0.0.1.tgz#dae0291ecc6bc07e884ab87e6404845f27659bd8"
+is-valid-npm-name@^0.0.3:
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/is-valid-npm-name/-/is-valid-npm-name-0.0.3.tgz#151c71f6d2e9e0e7bef05d8cc6855551fc52c170"
   dependencies:
     limax "^1.5.0"
 
