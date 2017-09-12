@@ -37,7 +37,7 @@
     "limax": "^1.5.0",
     "npm-conf": "^1.1.2",
     "npm-name": "^3.1.0",
-    "sao": "^0.21.9",
+    "sao": "^0.22.2",
     "semver": "^5.4.1",
     "spdx-license-list": "^3.0.1",
     "superb": "^1.3.0",
