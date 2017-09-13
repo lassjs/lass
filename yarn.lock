@@ -2793,6 +2793,12 @@ is-valid-npm-name@^0.0.3:
   dependencies:
     limax "^1.5.0"
 
+is-valid-npm-name@^0.0.4:
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/is-valid-npm-name/-/is-valid-npm-name-0.0.4.tgz#a1b54efb539bd8565188a4b265ceedec9602c9c2"
+  dependencies:
+    speakingurl "^14.0.1"
+
 is-whitespace-character@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/is-whitespace-character/-/is-whitespace-character-1.0.1.tgz#9ae0176f3282b65457a1992cdb084f8a5f833e3b"
