@@ -1,6 +1,6 @@
 const path = require('path');
 const fs = require('fs');
-
+const { execSync } = require('child_process');
 const githubUsernameRegex = require('github-username-regex');
 // const opn = require('opn');
 const isURL = require('is-url');
@@ -14,7 +14,6 @@ const slug = require('limax');
 const npmConf = require('npm-conf');
 const npmName = require('npm-name');
 const isValidNpmName = require('is-valid-npm-name');
-const { execSync } = require('child_process');
 
 const conf = npmConf();
 
@@ -118,7 +117,7 @@ module.exports = {
     trimWhitespaceMarkdown: {
       message: 'Trim trailing whitespace in markdown files',
       type: 'confirm',
-      default: true
+      default: false
     },
     indentation: {
       message: 'Indentation',
@@ -153,10 +152,13 @@ module.exports = {
     }
 
     execSync(`${ctx.folderPath}/node_modules/.bin/xo . --fix`, {
-      cwd: ctx.folderPath
+      cwd: ctx.folderPath,
+      stdio: 'inherit'
     });
-    execSync('npm test', {
-      cwd: ctx.folderPath
+
+    execSync(`${ctx.answers.pm === 'yarn' ? 'yarn' : 'npm'} test`, {
+      cwd: ctx.folderPath,
+      stdio: 'inherit'
     });
 
     // create `LICENSE` file with license selected
