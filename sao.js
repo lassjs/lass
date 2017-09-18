@@ -121,7 +121,8 @@ module.exports = {
       }
     },
     keywords: {
-      message: 'Write some keywords related to your project (comma/space separated)',
+      message:
+        'Write some keywords related to your project (comma/space separated)',
       default(answers) {
         return `${answers.name} lass`;
       }
