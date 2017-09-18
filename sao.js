@@ -1,6 +1,6 @@
 const path = require('path');
 const fs = require('fs');
-
+const { execSync } = require('child_process');
 const githubUsernameRegex = require('github-username-regex');
 // const opn = require('opn');
 const isURL = require('is-url');
@@ -119,6 +119,17 @@ module.exports = {
           ? true
           : 'Please include a valid GitHub.com URL without a trailing slash';
       }
+    },
+    trimWhitespaceMarkdown: {
+      message: 'Trim trailing whitespace in markdown files',
+      type: 'confirm',
+      default: false
+    },
+    indentation: {
+      message: 'Indentation',
+      type: 'list',
+      choices: ['2 spaces', '4 spaces', 'tabs'],
+      default: '2 spaces'
     }
   },
   move: {
@@ -126,6 +137,7 @@ module.exports = {
     // Because when it's published to npm
     // `.gitignore` file will be ignored!
     gitignore: '.gitignore',
+    example: 'example.js',
     README: 'README.md',
     package: 'package.json'
   },
@@ -144,6 +156,16 @@ module.exports = {
     } else {
       ctx.npmInstall();
     }
+
+    execSync(`${ctx.folderPath}/node_modules/.bin/xo . --fix`, {
+      cwd: ctx.folderPath,
+      stdio: 'inherit'
+    });
+
+    execSync(`${ctx.answers.pm === 'yarn' ? 'yarn' : 'npm'} test`, {
+      cwd: ctx.folderPath,
+      stdio: 'inherit'
+    });
 
     // create `LICENSE` file with license selected
     if (ctx.answers.license !== 'MIT') {

@@ -90,7 +90,11 @@
       "capitalized-comments": "off",
       "camelcase": "off",
       "no-warning-comments": "off"
-    },
-    "space": true
+    },<% if (indentation === '2 spaces') { %>
+    "space": true,
+    "tabWidth": 2,<% } else if (indentation === '4 spaces') { %>
+    "space": 4,
+    "tabWidth": 4,<% } %>
+    "ignores": ["example.js"]
   }
 }

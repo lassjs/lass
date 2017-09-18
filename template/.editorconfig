@@ -1,9 +1,13 @@
 root = true
 
 [*]
-indent_style = space
-indent_size = 2
+<% if (indentation === '2 spaces') { %>indent_style = space
+indent_size = 2<% } else if (indentation === '4 spaces') { %>indent_style = space
+indent_size = 4<% } else if (indentation === 'tabs') { %>indent_style = tab<% } %>
 end_of_line = lf
 charset = utf-8
 trim_trailing_whitespace = true
-insert_final_newline = true
+insert_final_newline = true<% if (!trimWhitespaceMarkdown) { %>
+
+[*.md]
+trim_trailing_whitespace = false<% } %>
