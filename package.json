@@ -29,6 +29,7 @@
     "Pablo Varela (http://pablo.life)"
   ],
   "dependencies": {
+    "auto-bind": "^1.1.0",
     "cac": "^4.2.1",
     "camelcase": "^4.1.0",
     "github-username": "^4.1.0",
@@ -37,7 +38,6 @@
     "is-email": "^1.0.0",
     "is-url": "^1.2.2",
     "is-valid-npm-name": "^0.0.4",
-    "lass": "^0.2.4",
     "npm-conf": "^1.1.2",
     "npm-name": "^3.1.0",
     "sao": "^0.22.2",
