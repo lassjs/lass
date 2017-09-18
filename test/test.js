@@ -24,8 +24,7 @@ test('auto detects email address from github', async t => {
     version: '0.0.1',
     author: 'TJ',
     email: 'tj@apex.sh',
-    website: 'https://apex.sh',
-    keywords: 'boilerplate generator npm package'
+    website: 'https://apex.sh'
   });
   t.is(stream.meta.answers.username, 'tj');
 });
