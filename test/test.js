@@ -12,7 +12,8 @@ const defaults = {
   author: 'Nick Baugh',
   email: 'niftylettuce@gmail.com',
   website: 'http://niftylettuce.com',
-  username: 'niftylettuce'
+  username: 'niftylettuce',
+  keywords: 'boilerplate,generator npm package lass'
 };
 
 test('auto detects email address from github', async t => {
@@ -23,7 +24,8 @@ test('auto detects email address from github', async t => {
     version: '0.0.1',
     author: 'TJ',
     email: 'tj@apex.sh',
-    website: 'https://apex.sh'
+    website: 'https://apex.sh',
+    keywords: 'boilerplate generator npm package'
   });
   t.is(stream.meta.answers.username, 'tj');
 });
