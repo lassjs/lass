@@ -12,7 +12,8 @@ const defaults = {
   author: 'Nick Baugh',
   email: 'niftylettuce@gmail.com',
   website: 'http://niftylettuce.com',
-  username: 'niftylettuce'
+  username: 'niftylettuce',
+  keywords: 'boilerplate,generator npm package lass'
 };
 
 test('auto detects email address from github', async t => {

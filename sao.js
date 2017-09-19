@@ -119,6 +119,13 @@ module.exports = {
           ? true
           : 'Please include a valid GitHub.com URL without a trailing slash';
       }
+    },
+    keywords: {
+      message:
+        'Write some keywords related to your project (comma/space separated)',
+      default(answers) {
+        return `${answers.name} lass`;
+      }
     }
   },
   move: {
