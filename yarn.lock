@@ -736,10 +736,6 @@ builtin-modules@^1.0.0, builtin-modules@^1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/builtin-modules/-/builtin-modules-1.1.1.tgz#270f076c5a72c02f5b65a47df94c5fe3a278892f"
 
-bulk-replace@0.0.1:
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/bulk-replace/-/bulk-replace-0.0.1.tgz#f095682a896abd4b3d9e08de409cc222e213f9dd"
-
 cac@^3.0.3:
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/cac/-/cac-3.0.4.tgz#6d24ceec372efe5c9b798808bc7f49b47242a4ef"
@@ -1046,12 +1042,6 @@ combined-stream@^1.0.5, combined-stream@~1.0.5:
 commander@^2.9.0:
   version "2.11.0"
   resolved "https://registry.yarnpkg.com/commander/-/commander-2.11.0.tgz#157152fd1e7a6c8d98a5b715cf376df928004563"
-
-commander@~1.1.1:
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/commander/-/commander-1.1.1.tgz#50d1651868ae60eccff0a2d9f34595376bc6b041"
-  dependencies:
-    keypress "0.1.x"
 
 commander@~2.8.1:
   version "2.8.1"
@@ -2345,12 +2335,6 @@ hawk@~3.1.3:
     hoek "2.x.x"
     sntp "1.x.x"
 
-hepburn@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/hepburn/-/hepburn-1.0.0.tgz#49ce862942a77570cd4f5c8fe100b85d942cb61b"
-  dependencies:
-    bulk-replace "0.0.1"
-
 hoek@2.x.x:
   version "2.16.3"
   resolved "https://registry.yarnpkg.com/hoek/-/hoek-2.16.3.tgz#20bb7403d3cea398e91dc4710a8ff1b8274a25ed"
@@ -2787,12 +2771,6 @@ is-utf8@^0.2.0, is-utf8@^0.2.1:
   version "0.2.1"
   resolved "https://registry.yarnpkg.com/is-utf8/-/is-utf8-0.2.1.tgz#4b0da1442104d1b336340e80797e865cf39f7d72"
 
-is-valid-npm-name@^0.0.3:
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/is-valid-npm-name/-/is-valid-npm-name-0.0.3.tgz#151c71f6d2e9e0e7bef05d8cc6855551fc52c170"
-  dependencies:
-    limax "^1.5.0"
-
 is-valid-npm-name@^0.0.4:
   version "0.0.4"
   resolved "https://registry.yarnpkg.com/is-valid-npm-name/-/is-valid-npm-name-0.0.4.tgz#a1b54efb539bd8565188a4b265ceedec9602c9c2"
@@ -3002,10 +2980,6 @@ jstransformer@^1.0.0:
     is-promise "^2.0.0"
     promise "^7.0.1"
 
-keypress@0.1.x:
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/keypress/-/keypress-0.1.0.tgz#4a3188d4291b66b4f65edb99f806aa9ae293592a"
-
 kind-of@^3.0.2:
   version "3.2.2"
   resolved "https://registry.yarnpkg.com/kind-of/-/kind-of-3.2.2.tgz#31ea21a734bab9bbb0f32466d893aea51e4a3c64"
@@ -3030,27 +3004,6 @@ kopy@^8.2.0:
     minimatch "^3.0.4"
     multimatch "^2.1.0"
     path-exists "^3.0.0"
-
-lass@^0.2.4:
-  version "0.2.4"
-  resolved "https://registry.yarnpkg.com/lass/-/lass-0.2.4.tgz#8b06dbc3bd6fbe9ab71c80c4cbaa7129655d71c3"
-  dependencies:
-    cac "^4.2.1"
-    camelcase "^4.1.0"
-    github-username "^4.1.0"
-    github-username-regex "^1.0.0"
-    is-email "^1.0.0"
-    is-url "^1.2.2"
-    is-valid-npm-name "^0.0.3"
-    limax "^1.5.0"
-    npm-conf "^1.1.2"
-    npm-name "^3.1.0"
-    sao "^0.22.2"
-    semver "^5.4.1"
-    spdx-license-list "^3.0.1"
-    superb "^1.3.0"
-    update-notifier "^2.2.0"
-    uppercamelcase "^3.0.0"
 
 last-line-stream@^1.0.0:
   version "1.0.0"
@@ -3088,14 +3041,6 @@ levn@^0.3.0, levn@~0.3.0:
   dependencies:
     prelude-ls "~1.1.2"
     type-check "~0.3.2"
-
-limax@^1.5.0:
-  version "1.5.0"
-  resolved "https://registry.yarnpkg.com/limax/-/limax-1.5.0.tgz#bbe7f2d3231cef709ebef8c32e3c75bce8fa5734"
-  dependencies:
-    hepburn "^1.0.0"
-    pinyin "^2.8.2"
-    speakingurl "^13.0.0"
 
 lint-staged@^4.0.4:
   version "4.1.0"
@@ -3533,10 +3478,6 @@ nan@^2.3.0:
   version "2.7.0"
   resolved "https://registry.yarnpkg.com/nan/-/nan-2.7.0.tgz#d95bf721ec877e08db276ed3fc6eb78f9083ad46"
 
-nan@~2.3.0:
-  version "2.3.5"
-  resolved "https://registry.yarnpkg.com/nan/-/nan-2.3.5.tgz#822a0dc266290ce4cd3a12282ca3e7e364668a08"
-
 natural-compare@^1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/natural-compare/-/natural-compare-1.4.0.tgz#4abebfeed7541f2c27acfb29bdbbd15c8d5ba4f7"
@@ -3578,12 +3519,6 @@ node-pre-gyp@^0.6.36:
     semver "^5.3.0"
     tar "^2.2.1"
     tar-pack "^3.4.0"
-
-nodejieba@^2.2.1:
-  version "2.2.5"
-  resolved "https://registry.yarnpkg.com/nodejieba/-/nodejieba-2.2.5.tgz#821441a683fad25ebd2c8dde1401dd43dbeb027a"
-  dependencies:
-    nan "~2.3.0"
 
 nopt@^4.0.1:
   version "4.0.1"
@@ -4017,15 +3952,6 @@ pinkie@^2.0.0:
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/pinkie/-/pinkie-2.0.4.tgz#72556b80cfa0d48a974e80e77248e80ed4f7f870"
 
-pinyin@^2.8.2:
-  version "2.8.3"
-  resolved "https://registry.yarnpkg.com/pinyin/-/pinyin-2.8.3.tgz#301ccb4358ccfe802523c4bd640a612bee4d7c4b"
-  dependencies:
-    commander "~1.1.1"
-    object-assign "^4.0.1"
-  optionalDependencies:
-    nodejieba "^2.2.1"
-
 pkg-conf@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/pkg-conf/-/pkg-conf-2.0.0.tgz#071c87650403bccfb9c627f58751bfe47c067279"
@@ -4348,7 +4274,7 @@ remark-heading-gap@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/remark-heading-gap/-/remark-heading-gap-3.0.0.tgz#f52ac47a27995ef3248a59eb7544b5620b4736a6"
 
-remark-license@niftylettuce/remark-license:
+"remark-license@github:niftylettuce/remark-license":
   version "4.0.1"
   resolved "https://codeload.github.com/niftylettuce/remark-license/tar.gz/17ecb8f64f8f6082414d14f9267a12764e6ddbfb"
   dependencies:
@@ -4815,9 +4741,9 @@ remark-parse@^4.0.0:
     vfile-location "^2.0.0"
     xtend "^4.0.1"
 
-remark-preset-github@^0.0.6:
-  version "0.0.6"
-  resolved "https://registry.yarnpkg.com/remark-preset-github/-/remark-preset-github-0.0.6.tgz#48dc9574f2ae59a94ccaee1a63a8f4f0826b0275"
+remark-preset-github@^0.0.7:
+  version "0.0.7"
+  resolved "https://registry.yarnpkg.com/remark-preset-github/-/remark-preset-github-0.0.7.tgz#4611fdf5451c2b142a7e2d9eadfb22b8acc3bade"
   dependencies:
     remark-comment-config "^5.0.0"
     remark-contributors "^3.1.0"
@@ -4866,7 +4792,7 @@ remark-preset-github@^0.0.6:
     remark-toc "^4.0.0"
     remark-validate-links "^7.0.0"
     retext-english "^3.0.0"
-    retext-preset-github "^0.0.3"
+    retext-preset-github "^0.0.4"
     unified "^6.0.0"
 
 remark-preset-lint-recommended@^3.0.1:
@@ -5101,9 +5027,9 @@ retext-indefinite-article@^1.1.0:
     unist-util-is "^2.0.0"
     unist-util-visit "^1.1.0"
 
-retext-preset-github@^0.0.3:
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/retext-preset-github/-/retext-preset-github-0.0.3.tgz#75c88efe6bad81a6c1246253f98c76f15e6d1e3f"
+retext-preset-github@^0.0.4:
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/retext-preset-github/-/retext-preset-github-0.0.4.tgz#9883f2f347dea3d1280885dddf50b530ee60dac5"
   dependencies:
     retext-contractions "^2.1.0"
     retext-diacritics "^1.2.0"
@@ -5355,10 +5281,6 @@ spdx-license-ids@^1.0.2:
 spdx-license-list@^3.0.1:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/spdx-license-list/-/spdx-license-list-3.0.1.tgz#163d72123e00f4f8bd6e18125696b009f1248ff5"
-
-speakingurl@^13.0.0:
-  version "13.0.0"
-  resolved "https://registry.yarnpkg.com/speakingurl/-/speakingurl-13.0.0.tgz#266c52d2b47585375af058e4783c8d1097a2d3db"
 
 speakingurl@^14.0.1:
   version "14.0.1"
