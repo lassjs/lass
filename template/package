@@ -1,6 +1,6 @@
 {
   "name": "<%- name %>",
-  <% if (!public) { %>"private": true, <% } %>
+  <% if (!public) { %>"private": true,<% } %>
   "description": "<%- description %>",
   "version": "<%- version %>",
   "author": "<%- author %> <<%- email %>> (<%- website%>)",
