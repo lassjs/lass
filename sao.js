@@ -110,7 +110,9 @@ module.exports = {
           answers.name.indexOf('@') === 0
             ? answers.name.split('/')[1]
             : slug(answers.name);
-        return `https://github.com/${slug(answers.username)}/${name}`;
+        return `https://github.com/${slug(answers.username, {
+          maintainCase: true
+        })}/${name}`;
       },
       validate: val => {
         return isURL(val) &&

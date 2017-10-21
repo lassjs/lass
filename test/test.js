@@ -41,6 +41,18 @@ test('defaults', async t => {
   t.snapshot(content, 'content of README.md');
 });
 
+test('username retains capital letters', async t => {
+  const stream = await sao.mockPrompt(
+    template,
+    Object.assign({}, defaults, {
+      name: 'my-package-name',
+      username: 'fooBar'
+    })
+  );
+  t.is(stream.meta.answers.username, 'fooBar');
+  t.regex(stream.meta.answers.repo, /fooBar/);
+});
+
 test('invalid name', async t => {
   const error = await t.throws(
     sao.mockPrompt(
