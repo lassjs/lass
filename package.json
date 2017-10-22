@@ -39,7 +39,7 @@
     "is-url": "^1.2.2",
     "is-valid-npm-name": "^0.0.4",
     "npm-conf": "^1.1.2",
-    "npm-name": "^3.1.0",
+    "npm-name-exists": "^1.0.2",
     "sao": "^0.22.2",
     "semver": "^5.4.1",
     "spdx-license-list": "^3.0.1",

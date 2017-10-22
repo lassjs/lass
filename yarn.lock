@@ -2236,7 +2236,7 @@ got@^6.3.0, got@^6.7.1:
     unzip-response "^2.0.1"
     url-parse-lax "^1.0.0"
 
-got@^7.0.0:
+got@^7.0.0, got@^7.1.0:
   version "7.1.0"
   resolved "https://registry.yarnpkg.com/got/-/got-7.1.0.tgz#05450fd84094e6bbea56f451a43a9c289166385a"
   dependencies:
@@ -3553,6 +3553,12 @@ npm-conf@^1.1.0, npm-conf@^1.1.2:
     config-chain "^1.1.11"
     pify "^3.0.0"
 
+npm-name-exists@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/npm-name-exists/-/npm-name-exists-1.0.2.tgz#cddffdbef195b592566ddce56ba9107be5696284"
+  dependencies:
+    got "^7.1.0"
+
 npm-name@^3.1.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/npm-name/-/npm-name-3.1.0.tgz#79789afac52ae335dc3a5aa7f41f59d1b77c756f"
@@ -4274,7 +4280,7 @@ remark-heading-gap@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/remark-heading-gap/-/remark-heading-gap-3.0.0.tgz#f52ac47a27995ef3248a59eb7544b5620b4736a6"
 
-"remark-license@github:niftylettuce/remark-license":
+remark-license@niftylettuce/remark-license:
   version "4.0.1"
   resolved "https://codeload.github.com/niftylettuce/remark-license/tar.gz/17ecb8f64f8f6082414d14f9267a12764e6ddbfb"
   dependencies:

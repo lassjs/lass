@@ -12,7 +12,7 @@ const camelcase = require('camelcase');
 const uppercamelcase = require('uppercamelcase');
 const slug = require('speakingurl');
 const npmConf = require('npm-conf');
-const npmName = require('npm-name');
+const npmExists = require('npm-name-exists');
 const isValidNpmName = require('is-valid-npm-name');
 const fetchGithubUsername = require('github-username');
 
@@ -37,9 +37,9 @@ module.exports = {
         if (process.env.NODE_ENV === 'test' && val === 'lass') return true;
         const check = isValidNpmName(val);
         if (check !== true) return check;
-        return (await npmName(val))
-          ? true
-          : `The package "${val}" already exists on npm`;
+        return (await npmExists(val))
+          ? `The package "${val}" already exists on npm`
+          : true;
       }
     },
     description: {
@@ -116,8 +116,8 @@ module.exports = {
       },
       validate: val => {
         return isURL(val) &&
-        val.indexOf('https://github.com/') === 0 &&
-        val.lastIndexOf('/') !== val.length - 1
+          val.indexOf('https://github.com/') === 0 &&
+          val.lastIndexOf('/') !== val.length - 1
           ? true
           : 'Please include a valid GitHub.com URL without a trailing slash';
       }
