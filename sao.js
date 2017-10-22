@@ -116,8 +116,8 @@ module.exports = {
       },
       validate: val => {
         return isURL(val) &&
-          val.indexOf('https://github.com/') === 0 &&
-          val.lastIndexOf('/') !== val.length - 1
+        val.indexOf('https://github.com/') === 0 &&
+        val.lastIndexOf('/') !== val.length - 1
           ? true
           : 'Please include a valid GitHub.com URL without a trailing slash';
       }
