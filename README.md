@@ -66,9 +66,9 @@
 
 ## Prerequisities
 
-* Node.JS ^7.10.1
+* Node.JS ^7.6.0
 
-It is necessary to have version `^7.10.1` of [Node.JS](https://nodejs.org/) installed, since **lass** uses native [async/await](http://node.green/#ES2017-features-async-functions) to generate our template.
+It is necessary to have version `^7.6.0` of [Node.JS](https://nodejs.org/) installed, since **lass** uses native [async/await](http://node.green/#ES2017-features-async-functions) to generate our template.
 
 
 ## Install
