@@ -26,6 +26,7 @@
 ## Table of Contents
 
 * [Features](#features)
+* [Prerequisities](#prerequisities)
 * [Install](#install)
 * [Usage](#usage)
   * [Create a package](#create-a-package)
@@ -62,6 +63,13 @@
   * Readme with badges through [Shields.io][shields]
   * Choose from (343) different licenses with [spdx-license-list][] (defaults to your npm default or MIT)
   * Automatically inserts license year/name/email/website for MIT license if selected
+
+
+## Prerequisities
+
+* Node.JS ^7.10.1
+
+It is necessary to have version `^7.10.1` of [Node.JS](https://nodejs.org/) installed, since **lass** uses native [async/await](http://node.green/#ES2017-features-async-functions) to generate our template.
 
 
 ## Install
