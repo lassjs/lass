@@ -1,6 +1,7 @@
 const path = require('path');
 const test = require('ava');
 const sao = require('sao');
+const spdxLicenseList = require('spdx-license-list/simple');
 
 const template = path.join(__dirname, '..');
 
@@ -28,6 +29,31 @@ test('auto detects email address from github', async t => {
   });
   t.is(stream.meta.answers.username, 'tj');
 });
+
+test('allows SPDX licenses', async t => {
+  const getRandomLicense = () => {
+    return Array.from(spdxLicenseList)[
+      Math.floor(Math.random() * Array.from(spdxLicenseList).length)
+    ];
+  };
+  const license = getRandomLicense();
+  const stream = await sao.mockPrompt(template, {
+    name: 'lass',
+    description: 'test',
+    license,
+    version: '0.0.1',
+    author: 'TJ',
+    email: 'tj@apex.sh',
+    website: 'https://apex.sh'
+  });
+  t.is(stream.meta.answers.license, license);
+});
+
+//
+// test.todo('logs error on non-SPDX license');
+
+//
+// test.todo('logs error if soa fails to write license');
 
 test('defaults', async t => {
   const stream = await sao.mockPrompt(
