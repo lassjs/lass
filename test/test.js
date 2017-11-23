@@ -36,7 +36,13 @@ test('defaults', async t => {
       name: 'my-package-name'
     })
   );
-  t.snapshot(stream.fileList, 'generated files');
+
+  const ignoredFiles = ['yarn-error.log'];
+  t.snapshot(
+    stream.fileList.filter(path => !ignoredFiles.includes(path)),
+    'generated files'
+  );
+
   const content = stream.fileContents('README.md');
   t.snapshot(content, 'content of README.md');
 });
