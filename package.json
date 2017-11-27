@@ -1,6 +1,6 @@
 {
   "name": "lass",
-  "description": "Lass scaffolds a modern package boilerplate for node",
+  "description": "Lass scaffolds a modern package boilerplate for Node.js",
   "version": "0.3.0",
   "author": "Nick Baugh <niftylettuce@gmail.com> (http://niftylettuce.com)",
   "bin": "cli.js",
