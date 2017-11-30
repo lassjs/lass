@@ -1,6 +1,6 @@
 const path = require('path');
 const fs = require('fs');
-const { spawn } = require('child_process');
+const execa = require('execa');
 
 const githubUsernameRegex = require('github-username-regex');
 // const opn = require('opn');
@@ -199,7 +199,7 @@ module.exports = {
 
     // Format code according to eslint configuration
     const linter = ctx.answers.eslint === 'standard' ? 'standard' : 'xo';
-    await spawn(`./node_modules/.bin/${linter}`, ['--fix'], {
+    await execa(`./node_modules/.bin/${linter}`, ['--fix'], {
       cwd: ctx.folderPath,
       stdio: 'inherit'
     });
