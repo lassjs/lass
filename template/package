@@ -20,15 +20,15 @@
     "codecov": "^2.3.0",
     "cross-env": "^5.0.5",
     "eslint": "^4.5.0",
-    "eslint-config-prettier": "^2.3.0",
-    "eslint-plugin-prettier": "^2.2.0",
+    "eslint-config-<%- eslint %>": "latest",
+    "eslint-plugin-<%- eslint %>": "latest",
     "husky": "^0.14.3",
     "lint-staged": "^4.0.4",
     "nyc": "^11.1.0",
     "prettier": "^1.6.1",
     "remark-cli": "^4.0.0",
     "remark-preset-github": "^0.0.6",
-    "xo": "^0.19.0"
+    <%- eslint === 'standard' ? `"standard"`: `"xo"` %>: "latest"
   },
   "engines": {
     "node": ">=8.3"
@@ -58,13 +58,7 @@
     "type": "git",
     "url": "<%- repo %>"
   },
-  "scripts": {
-    "coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov",
-    "lint": "xo && remark . -qfo",
-    "precommit": "lint-staged && npm test",
-    "test": "npm run lint && npm run test-coverage",
-    "test-coverage": "cross-env NODE_ENV=test nyc ava"
-  },
+  <% if (eslint === 'prettier') { %>
   "xo": {
     "extends": "prettier",
     "plugins": ["prettier"],
@@ -92,5 +86,17 @@
       "no-warning-comments": "off"
     },
     "space": true
+  },
+  <% } %>
+  "scripts": {
+    "coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov",
+    <% if (eslint === 'prettier') { %>
+    "lint": "xo && remark . -qfo",
+    <% } else { %>
+    "lint": "standard && remark . -qfo",
+    <% } %>
+    "precommit": "lint-staged && npm test",
+    "test": "npm run lint && npm run test-coverage",
+    "test-coverage": "cross-env NODE_ENV=test nyc ava"
   }
 }
