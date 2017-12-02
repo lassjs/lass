@@ -12,7 +12,7 @@ const camelcase = require('camelcase');
 const uppercamelcase = require('uppercamelcase');
 const slug = require('speakingurl');
 const npmConf = require('npm-conf');
-const npmExists = require('npm-name-exists');
+// const npmExists = require('npm-name-exists');
 const isValidNpmName = require('is-valid-npm-name');
 const fetchGithubUsername = require('github-username');
 
@@ -35,11 +35,10 @@ module.exports = {
       default: ':folderName:',
       validate: async val => {
         if (process.env.NODE_ENV === 'test' && val === 'lass') return true;
-        const check = isValidNpmName(val);
-        if (check !== true) return check;
-        return (await npmExists(val))
-          ? `The package "${val}" already exists on npm`
-          : true;
+        return isValidNpmName(val);
+        // return (await npmExists(val))
+        //   ? `The package "${val}" already exists on npm`
+        //   : true;
       }
     },
     description: {
