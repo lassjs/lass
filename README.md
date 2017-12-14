@@ -133,6 +133,8 @@ To check your existing configuration, run `npm config list -l`.
 ## Related
 
 * [lad][] - Scaffold a [Koa][] webapp and API framework for [Node.js][node]
+* [lipo][] - Free image manipulation API service built on top of [Sharp][]
+* [cabin][] - Logging and analytics solution for [Node.js][node], [Lad][], [Koa][], and [Express][]
 
 
 ## Contributors
@@ -145,7 +147,7 @@ To check your existing configuration, run `npm config list -l`.
 
 ## Trademark Notice
 
-Lass, Lad, and their respective logos are trademarks of Niftylettuce LLC.
+Lass, Lad, Cabin, Lipo, and their respective logos are trademarks of Niftylettuce LLC.
 These trademarks may not be reproduced, distributed, transmitted, or otherwise used, except with the prior written permission of Niftylettuce LLC.
 If you are seeking permission to use these trademarks, then please [contact us](mailto:niftylettuce@gmail.com).
 
@@ -198,3 +200,11 @@ If you are seeking permission to use these trademarks, then please [contact us](
 [spdx-license-list]: https://github.com/sindresorhus/spdx-license-list
 
 [npm-init-defaults]: https://docs.npmjs.com/misc/config#init-author-name
+
+[sharp]: http://sharp.dimens.io/
+
+[lipo]: https://lipo.io
+
+[cabin]: http://cabinjs.com
+
+[express]: https://expressjs.com
