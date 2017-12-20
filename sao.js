@@ -70,6 +70,13 @@ module.exports = {
       default: conf.get('init-version'),
       validate: val => (semver.valid(val) ? true : 'Invalid semver version')
     },
+    eslint: {
+      message: 'Choose an eslint configuration',
+      choices: ['prettier', 'standard'],
+      type: 'list',
+      default: 'prettier',
+      store: true
+    },
     author: {
       message: "What is your name (the author's)",
       default: conf.get('init-author-name') || ':gitUser:',
@@ -121,13 +128,6 @@ module.exports = {
           ? true
           : 'Please include a valid GitHub.com URL without a trailing slash';
       }
-    },
-    eslint: {
-      message: 'Choose the eslint config',
-      choices: ['standard', 'prettier'],
-      type: 'list',
-      default: 'standard',
-      store: true
     },
     keywords: {
       message:
