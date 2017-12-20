@@ -1,5 +1,6 @@
 const path = require('path');
 const fs = require('fs');
+const execa = require('execa');
 
 const githubUsernameRegex = require('github-username-regex');
 // const opn = require('opn');
@@ -121,6 +122,13 @@ module.exports = {
           : 'Please include a valid GitHub.com URL without a trailing slash';
       }
     },
+    eslint: {
+      message: 'Choose the eslint config',
+      choices: ['standard', 'prettier'],
+      type: 'list',
+      default: 'standard',
+      store: true
+    },
     keywords: {
       message:
         'Write some keywords related to your project (comma/space separated)',
@@ -187,6 +195,13 @@ module.exports = {
       ctx.log.error(err.message);
     }
     */
+
+    // Format code according to eslint configuration
+    const linter = ctx.answers.eslint === 'standard' ? 'standard' : 'xo';
+    await execa(`./node_modules/.bin/${linter}`, ['--fix'], {
+      cwd: ctx.folderPath,
+      stdio: 'inherit'
+    });
 
     ctx.showTip();
   }
