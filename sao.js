@@ -33,7 +33,7 @@ module.exports = {
   prompts: {
     name: {
       message: 'What is the name of the new package',
-      default: ':folderName:',
+      default: () => process.argv[2] || ':folderName:',
       validate: async val => {
         if (process.env.NODE_ENV === 'test' && val === 'lass') return true;
         return isValidNpmName(val);
