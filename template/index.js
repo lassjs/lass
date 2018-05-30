@@ -7,6 +7,7 @@ class Script {
 
     autoBind(this);
   }
+
   renderName() {
     return this._name;
   }

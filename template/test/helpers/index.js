@@ -1,4 +1,4 @@
-const Script = require('../../');
+const Script = require('../..');
 
 function beforeEach(t) {
   const script = new Script({});

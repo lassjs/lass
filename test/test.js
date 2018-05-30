@@ -32,8 +32,8 @@ test('auto detects email address from github', async t => {
 
 test('allows SPDX licenses', async t => {
   const getRandomLicense = () => {
-    return Array.from(spdxLicenseList)[
-      Math.floor(Math.random() * Array.from(spdxLicenseList).length)
+    return [...spdxLicenseList][
+      Math.floor(Math.random() * [...spdxLicenseList].length)
     ];
   };
   const license = getRandomLicense();
