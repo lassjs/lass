@@ -144,6 +144,7 @@ To check your existing configuration, run `npm config list -l`.
 | ---------------- | ------------------------- |
 | **Nick Baugh**   | <http://niftylettuce.com> |
 | **Pablo Varela** | <http://pablo.life>       |
+| **Shaun Warman** | <http://shaunwarman.com>  |
 
 
 ## Trademark Notice

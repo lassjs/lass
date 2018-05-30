@@ -1,7 +1,7 @@
 {
   "name": "lass",
   "description": "Lass scaffolds a modern package boilerplate for Node.js",
-  "version": "0.3.5",
+  "version": "0.3.6",
   "author": "Nick Baugh <niftylettuce@gmail.com> (http://niftylettuce.com)",
   "bin": "cli.js",
   "ava": {
@@ -26,7 +26,8 @@
   },
   "contributors": [
     "Nick Baugh <niftylettuce@gmail.com> (http://niftylettuce.com)",
-    "Pablo Varela (http://pablo.life)"
+    "Pablo Varela (http://pablo.life)",
+    "Shaun Warman <shaunwarman1@gmail.com> (http://shaunwarman.com)"
   ],
   "dependencies": {
     "auto-bind": "^1.2.0",
