@@ -22,6 +22,8 @@
   </sub>
 </div>
 
+> :heart: Love this project? Support <a href="https://github.com/niftylettuce" target="_blank">@niftylettuce's</a> [FOSS](https://en.wikipedia.org/wiki/Free_and_open-source_software) on <a href="https://patreon.com/niftylettuce" target="_blank">Patreon</a> or <a href="https://paypal.me/niftylettuce">PayPal</a> :unicorn:
+
 
 ## Table of Contents
 
@@ -159,7 +161,7 @@ If you are seeking permission to use these trademarks, then please [contact us](
 [MIT](LICENSE) © [Nick Baugh](http://niftylettuce.com)
 
 
-## 
+##
 
 <a href="#"><img src="https://cdn.rawgit.com/lassjs/lass/e39cd571/media/lass-footer.png" alt="#" /></a>
 
