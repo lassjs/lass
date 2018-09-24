@@ -67,7 +67,7 @@ module.exports = {
     },
     version: {
       message: 'Choose an initial semver version',
-      default: conf.get('init-version'),
+      default: conf.get('init-version') || '1.0.0',
       validate: val => (semver.valid(val) ? true : 'Invalid semver version')
     },
     eslint: {
