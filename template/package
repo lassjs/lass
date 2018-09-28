@@ -38,7 +38,7 @@
   "license": "MIT",
   "lint-staged": {
     "*.{js,jsx,mjs,ts,tsx,css,less,scss,json,graphql}": [
-      "prettier --write --single-quote --trailing-comma none",
+      "prettier --write",
       "git add"
     ],
     "*.md": ["remark . -qfo", "git add"]
@@ -58,6 +58,11 @@
     "type": "git",
     "url": "<%- repo %>"
   },
+  "prettier": {
+    "singleQuote": true,
+    "bracketSpacing": true,
+    "trailingComma": "none"
+  },
   <% if (eslint === 'prettier') { %>
   "xo": {
     "extends": "prettier",
@@ -66,14 +71,7 @@
       "sourceType": "script"
     },
     "rules": {
-      "prettier/prettier": [
-        "error",
-        {
-          "singleQuote": true,
-          "bracketSpacing": true,
-          "trailingComma": "none"
-        }
-      ],
+      "prettier/prettier": "error",
       "max-len": [
         "error",
         {
