@@ -30,7 +30,7 @@
 ## Table of Contents
 
 * [Features](#features)
-* [Prerequisites](#prerequisites)
+* [Requirements](#requirements)
 * [Install](#install)
 * [Usage](#usage)
   * [Create a package](#create-a-package)
@@ -71,7 +71,7 @@
   * Automatically inserts license year/name/email/website for MIT license if selected
 
 
-## Prerequisites
+## Requirements
 
 Node.js v7.6.0+
 
