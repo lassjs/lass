@@ -1,9 +1,11 @@
 const path = require('path');
 const fs = require('fs');
+const fixpack = require('fixpack');
+const ncu = require('npm-check-updates');
 const execa = require('execa');
-
+const { which } = require('shelljs');
 const githubUsernameRegex = require('github-username-regex');
-// const opn = require('opn');
+const opn = require('opn');
 const isURL = require('is-url');
 const isEmail = require('is-email');
 const semver = require('semver');
@@ -13,7 +15,6 @@ const camelcase = require('camelcase');
 const uppercamelcase = require('uppercamelcase');
 const slug = require('speakingurl');
 const npmConf = require('npm-conf');
-// const npmExists = require('npm-name-exists');
 const isValidNpmName = require('is-valid-npm-name');
 const fetchGithubUsername = require('github-username');
 
@@ -23,6 +24,7 @@ const defaultLicense =
   conf.get('init-license') === 'ISC' ? 'MIT' : conf.get('init-license');
 
 module.exports = {
+  updateNotify: true,
   enforceNewFolder: true,
   templateOptions: {
     context: {
@@ -34,17 +36,14 @@ module.exports = {
     name: {
       message: 'What is the name of the new package',
       default: () => process.argv[2] || ':folderName:',
-      validate: async val => {
+      validate: val => {
         if (process.env.NODE_ENV === 'test' && val === 'lass') return true;
         return isValidNpmName(val);
-        // return (await npmExists(val))
-        //   ? `The package "${val}" already exists on npm`
-        //   : true;
       }
     },
     description: {
       message: 'How would you describe the new package',
-      default: `my ${superb()} project`
+      default: `my ${superb.random()} project`
     },
     pm: {
       message: 'Choose a package manager',
@@ -155,12 +154,6 @@ module.exports = {
   post: async ctx => {
     ctx.gitInit();
 
-    if (ctx.answers.pm === 'yarn') {
-      ctx.yarnInstall();
-    } else {
-      ctx.npmInstall();
-    }
-
     // create `LICENSE` file with license selected
     if (ctx.answers.license !== 'MIT') {
       try {
@@ -178,7 +171,7 @@ module.exports = {
       }
     }
 
-    /*
+    // Open browser
     try {
       const gh = ctx.answers.repo.replace('https://github.com/', '');
       await Promise.all(
@@ -194,11 +187,34 @@ module.exports = {
     } catch (err) {
       ctx.log.error(err.message);
     }
-    */
+
+    // Update packages
+    await ncu.run({
+      packageFile: `${ctx.folderPath}/package.json`,
+      packageFileDir: true,
+      upgradeAll: true,
+      upgrade: true
+    });
+
+    // Fix package.json file
+    fixpack(`${ctx.folderPath}/package.json`);
+
+    // Install packages
+    if (ctx.answers.pm === 'yarn') {
+      ctx.yarnInstall();
+    } else {
+      ctx.npmInstall();
+    }
 
     // Format code according to eslint configuration
     const linter = ctx.answers.eslint === 'standard' ? 'standard' : 'xo';
     await execa(`./node_modules/.bin/${linter}`, ['--fix'], {
+      cwd: ctx.folderPath,
+      stdio: 'inherit'
+    });
+
+    // Run tests
+    await execa(which(ctx.answers.pm).stdout, ['test'], {
       cwd: ctx.folderPath,
       stdio: 'inherit'
     });

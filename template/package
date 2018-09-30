@@ -15,19 +15,22 @@
     "verbose": true
   },
   "devDependencies": {
-    "auto-bind": "^1.1.0",
-    "ava": "^0.22.0",
-    "codecov": "^2.3.0",
-    "cross-env": "^5.0.5",
-    "eslint": "^4.5.0",
+    "@commitlint/cli": "latest",
+    "@commitlint/config-conventional": "latest",
+    "ava": "latest",
+    "codecov": "latest",
+    "cross-env": "latest",
+    "eslint": "latest",
     "eslint-config-<%- eslint %>": "latest",
     "eslint-plugin-<%- eslint %>": "latest",
-    "husky": "^0.14.3",
-    "lint-staged": "^4.0.4",
-    "nyc": "^11.1.0",
-    "prettier": "^1.6.1",
-    "remark-cli": "^4.0.0",
-    "remark-preset-github": "^0.0.6",
+    "fixpack": "latest",
+    "npm-check-updates": "latest",
+    "husky": "latest",
+    "lint-staged": "latest",
+    "nyc": "latest",
+    "prettier": "latest",
+    "remark-cli": "latest",
+    "remark-preset-github": "latest",
     <%- eslint === 'standard' ? `"standard"`: `"xo"` %>: "latest"
   },
   "engines": {
@@ -36,12 +39,32 @@
   "homepage": "<%- repo %>",
   "keywords": [ <%- `${keywords.trim().split(/[, ]+/).map(k => `"${k.trim()}"`).join(', ')}` %> ],
   "license": "MIT",
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged && npm test",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
   "lint-staged": {
-    "*.{js,jsx,mjs,ts,tsx,css,less,scss,json,graphql}": [
-      "prettier --write --single-quote --trailing-comma none",
-      "git add"
-    ],
-    "*.md": ["remark . -qfo", "git add"]
+    "linters": {
+      "*.js": [
+        <% if (eslint === 'standard') { %>
+        "standard --fix",
+        <% } else { %>
+        "prettier --write",
+        "xo --fix",
+        <% } %>
+        "npm run lint",
+        "git add"
+      ],
+      "*.md": ["remark . -qfo", "git add"],
+      "package.json": [ "fixpack", "git add" ]
+    }
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
   },
   "main": "index.js",
   "nyc": {
@@ -59,21 +82,18 @@
     "url": "<%- repo %>"
   },
   <% if (eslint === 'prettier') { %>
+  "prettier": {
+    "singleQuote": true,
+    "bracketSpacing": true,
+    "trailingComma": "none"
+  },
   "xo": {
-    "extends": "prettier",
-    "plugins": ["prettier"],
+    "prettier": true,
+    "space": true,
     "parserOptions": {
       "sourceType": "script"
     },
     "rules": {
-      "prettier/prettier": [
-        "error",
-        {
-          "singleQuote": true,
-          "bracketSpacing": true,
-          "trailingComma": "none"
-        }
-      ],
       "max-len": [
         "error",
         {
@@ -81,11 +101,18 @@
           "ignoreUrls": true
         }
       ],
+      "max-lines": [ "error", 2000 ],
+      "unicorn/catch-error-name": [
+        "error",
+        {
+          "name": "err"
+        }
+      ],
       "capitalized-comments": "off",
       "camelcase": "off",
-      "no-warning-comments": "off"
-    },
-    "space": true
+      "no-warning-comments": "off",
+      "ava/no-todo-test": "off"
+    }
   },
   <% } %>
   "scripts": {
@@ -95,8 +122,9 @@
     <% } else { %>
     "lint": "standard && remark . -qfo",
     <% } %>
-    "precommit": "lint-staged && npm test",
-    "test": "npm run lint && npm run test-coverage",
-    "test-coverage": "cross-env NODE_ENV=test nyc ava"
+    "test": "npm run lint && npm run ava",
+    "test-coverage": "npm run lint && npm run nyc",
+    "ava": "cross-env NODE_ENV=test ava",
+    "nyc": "cross-env NODE_ENV=test nyc ava"
   }
 }

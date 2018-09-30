@@ -1,11 +1,9 @@
-const autoBind = require('auto-bind');
-
 class Script {
   constructor(config) {
     config = Object.assign({}, config);
     this._name = config.name || 'script';
 
-    autoBind(this);
+    this.renderName = this.renderName.bind(this);
   }
 
   renderName() {
