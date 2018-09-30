@@ -26,7 +26,7 @@
 <hr />
 
 <div align="center">
-  <img width="600" src="https://rawgit.com/lassjs/lass/88d1c6c/media/demo.svg" alt="" />
+  <img width="600" src="https://rawgit.com/lassjs/lass/3e62eea/media/demo.svg" alt="" />
 </div>
 
 <div align="center">:heart: Love this project? Support <a href="https://github.com/niftylettuce" target="_blank">@niftylettuce's</a> <a href="https://en.wikipedia.org/wiki/Free_and_open-source_software" target="_blank">FOSS</a> on <a href="https://patreon.com/niftylettuce" target="_blank">Patreon</a> or <a href="https://paypal.me/niftylettuce">PayPal</a> :unicorn:</div>
@@ -169,7 +169,7 @@ If you are seeking permission to use these trademarks, then please [contact us](
 [MIT](LICENSE) © [Nick Baugh](http://niftylettuce.com)
 
 
-## 
+##
 
 <a href="#"><img src="https://cdn.rawgit.com/lassjs/lass/e39cd571/media/lass-footer.png" alt="#" /></a>
 
