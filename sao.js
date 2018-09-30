@@ -1,7 +1,6 @@
 const path = require('path');
 const fs = require('fs');
 const fixpack = require('fixpack');
-const ncu = require('npm-check-updates');
 const execa = require('execa');
 const { which } = require('shelljs');
 const githubUsernameRegex = require('github-username-regex');
@@ -187,14 +186,6 @@ module.exports = {
     } catch (err) {
       ctx.log.error(err.message);
     }
-
-    // Update packages
-    await ncu.run({
-      packageFile: `${ctx.folderPath}/package.json`,
-      packageFileDir: true,
-      upgradeAll: true,
-      upgrade: true
-    });
 
     // Fix package.json file
     fixpack(`${ctx.folderPath}/package.json`);

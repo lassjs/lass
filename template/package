@@ -24,7 +24,6 @@
     "eslint-config-<%- eslint %>": "latest",
     "eslint-plugin-<%- eslint %>": "latest",
     "fixpack": "latest",
-    "npm-check-updates": "latest",
     "husky": "latest",
     "lint-staged": "latest",
     "nyc": "latest",
