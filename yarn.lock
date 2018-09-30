@@ -2287,6 +2287,11 @@ eslint-config-prettier@^3.0.1, eslint-config-prettier@^3.1.0:
   dependencies:
     get-stdin "^6.0.0"
 
+eslint-config-xo-lass@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/eslint-config-xo-lass/-/eslint-config-xo-lass-1.0.2.tgz#1307daf5eaa2687399cb8ee3df41ca466420ade0"
+  integrity sha512-Y5BIpHzV3U6sYDJGiX4MWxQDTL9o2DXxa/x1CMsd9n+OrkgYP+SPsrXOAolXpTSnSl+Fh5InOkjxzdsRWBZWTQ==
+
 eslint-config-xo@^0.25.0:
   version "0.25.0"
   resolved "https://registry.yarnpkg.com/eslint-config-xo/-/eslint-config-xo-0.25.0.tgz#8e8bbdee06e3d75b47aeba03fb28d4a43cc8092f"
@@ -6149,7 +6154,7 @@ remark-heading-gap@^3.0.0:
   resolved "https://registry.yarnpkg.com/remark-heading-gap/-/remark-heading-gap-3.0.0.tgz#f52ac47a27995ef3248a59eb7544b5620b4736a6"
   integrity sha1-9SrEeieZXvMkilnrdUS1YgtHNqY=
 
-"remark-license@github:niftylettuce/remark-license":
+remark-license@niftylettuce/remark-license:
   version "4.0.1"
   resolved "https://codeload.github.com/niftylettuce/remark-license/tar.gz/17ecb8f64f8f6082414d14f9267a12764e6ddbfb"
   dependencies:

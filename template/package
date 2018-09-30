@@ -30,6 +30,9 @@
     "prettier": "latest",
     "remark-cli": "latest",
     "remark-preset-github": "latest",
+    <% if (eslint === 'prettier') { %>
+    "eslint-config-xo-lass": "latest",
+    <% } %>
     <%- eslint === 'standard' ? `"standard"`: `"xo"` %>: "latest"
   },
   "engines": {
@@ -53,7 +56,6 @@
         "prettier --write",
         "xo --fix",
         <% } %>
-        "npm run lint",
         "git add"
       ],
       "*.md": ["remark . -qfo", "git add"],
@@ -89,29 +91,7 @@
   "xo": {
     "prettier": true,
     "space": true,
-    "parserOptions": {
-      "sourceType": "script"
-    },
-    "rules": {
-      "max-len": [
-        "error",
-        {
-          "code": 80,
-          "ignoreUrls": true
-        }
-      ],
-      "max-lines": [ "error", 2000 ],
-      "unicorn/catch-error-name": [
-        "error",
-        {
-          "name": "err"
-        }
-      ],
-      "capitalized-comments": "off",
-      "camelcase": "off",
-      "no-warning-comments": "off",
-      "ava/no-todo-test": "off"
-    }
+    "extends": [ "xo-lass" ]
   },
   <% } %>
   "scripts": {

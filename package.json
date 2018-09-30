@@ -64,6 +64,7 @@
     "cross-env": "^5.2.0",
     "eslint": "^5.6.1",
     "eslint-config-prettier": "^3.1.0",
+    "eslint-config-xo-lass": "^1.0.2",
     "eslint-plugin-prettier": "^2.7.0",
     "husky": "^1.0.1",
     "lint-staged": "^7.3.0",
@@ -119,7 +120,6 @@
       "*.js": [
         "prettier --write",
         "xo --fix",
-        "npm run lint",
         "git add"
       ],
       "*.md": [
@@ -164,31 +164,9 @@
   "xo": {
     "prettier": true,
     "space": true,
-    "parserOptions": {
-      "sourceType": "script"
-    },
-    "rules": {
-      "max-len": [
-        "error",
-        {
-          "code": 80,
-          "ignoreUrls": true
-        }
-      ],
-      "max-lines": [
-        "error",
-        2000
-      ],
-      "unicorn/catch-error-name": [
-        "error",
-        {
-          "name": "err"
-        }
-      ],
-      "capitalized-comments": "off",
-      "camelcase": "off",
-      "no-warning-comments": "off"
-    },
+    "extends": [
+      "xo-lass"
+    ],
     "ignores": [
       "config.js"
     ]
