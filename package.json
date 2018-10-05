@@ -118,7 +118,6 @@
   "lint-staged": {
     "linters": {
       "*.js": [
-        "prettier --write",
         "xo --fix",
         "git add"
       ],

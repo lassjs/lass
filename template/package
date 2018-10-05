@@ -53,7 +53,6 @@
         <% if (eslint === 'standard') { %>
         "standard --fix",
         <% } else { %>
-        "prettier --write",
         "xo --fix",
         <% } %>
         "git add"
