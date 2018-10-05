@@ -3,7 +3,7 @@
 </h1>
 <div align="center">
   <a href="http://slack.crocodilejs.com"><img src="http://slack.crocodilejs.com/badge.svg" alt="chat" /></a>
-  <a href="https://travis-ci.org/lassjs/lass"><img src="https://travis-ci.org/lassjs/lass.svg?branch=master" alt="build status" /></a>
+  <a href="https://travis-ci.com/lassjs/lass"><img src="https://travis-ci.com/lassjs/lass.svg?branch=master" alt="build status" /></a>
   <a href="https://codecov.io/github/lassjs/lass"><img src="https://img.shields.io/codecov/c/github/lassjs/lass/master.svg" alt="code coverage" /></a>
   <a href="https://github.com/sindresorhus/xo"><img src="https://img.shields.io/badge/code_style-XO-5ed9c7.svg" alt="code style" /></a>
   <a href="https://github.com/prettier/prettier"><img src="https://img.shields.io/badge/styled_with-prettier-ff69b4.svg" alt="styled with prettier" /></a>
@@ -179,7 +179,7 @@ If you are seeking permission to use these trademarks, then please [contact us](
 
 [codecov]: https://codecov.io
 
-[travis-ci]: https://travis-ci.org
+[travis-ci]: https://travis-ci.com
 
 [ava]: https://github.com/avajs/ava
 

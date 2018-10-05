@@ -4,7 +4,6 @@ const fixpack = require('fixpack');
 const execa = require('execa');
 const { which } = require('shelljs');
 const githubUsernameRegex = require('github-username-regex');
-const opn = require('opn');
 const isURL = require('is-url');
 const isEmail = require('is-email');
 const semver = require('semver');
@@ -170,22 +169,13 @@ module.exports = {
       }
     }
 
-    // Open browser
-    try {
-      const gh = ctx.answers.repo.replace('https://github.com/', '');
-      await Promise.all(
-        [
-          ctx.answers.repo,
-          `https://travis-ci.${ctx.answers.public ? 'org' : 'com'}/${gh}`,
-          `https://codecov.io/gh/${gh}`
-        ].map(link => opn(link, { wait: false }))
-      );
-      ctx.log.success(
-        'Opened browser to GitHub, Travis-CI, and Codecov for configuration!'
-      );
-    } catch (err) {
-      ctx.log.error(err.message);
-    }
+    // Comment links for user
+    const gh = ctx.answers.repo.replace('https://github.com/', '');
+    [
+      ctx.answers.repo,
+      `https://travis-ci.com}/${gh}`,
+      `https://codecov.io/gh/${gh}`
+    ].map(link => ctx.log(`TODO: ${link}`));
 
     // Fix package.json file
     fixpack(`${ctx.folderPath}/package.json`);
