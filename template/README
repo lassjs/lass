@@ -6,6 +6,7 @@
 [![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 [![made with lass](https://img.shields.io/badge/made_with-lass-95CC28.svg)](https://lass.js.org)
 [![license](https://img.shields.io/github/license/<%- repo.replace('https://github.com/', '') %>.svg)](LICENSE)
+<% if (public) { %>[![npm downloads](https://img.shields.io/npm/dt/<%= name %>.svg)](https://npm.im/<%= name %>)<% } %>
 
 > <%- description %>
 
