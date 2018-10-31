@@ -159,13 +159,13 @@ module.exports = {
           path.join(ctx.folderName, 'LICENSE'),
           spdxLicenseList[ctx.answers.license].licenseText
         );
-        ctx.log.warn(
+        console.log.warn(
           `You should update the ${ctx.chalk.yellow(
             'LICENSE'
           )} file accordingly (e.g. add your name/company/year)`
         );
       } catch (err) {
-        ctx.log.error(err);
+        console.log.error(err);
       }
     }
 
@@ -175,7 +175,7 @@ module.exports = {
       ctx.answers.repo,
       `https://travis-ci.com}/${gh}`,
       `https://codecov.io/gh/${gh}`
-    ].map(link => ctx.log(`TODO: ${link}`));
+    ].map(link => console.log(`TODO: ${link}`));
 
     // Fix package.json file
     fixpack(`${ctx.folderPath}/package.json`);
