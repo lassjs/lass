@@ -64,10 +64,10 @@
     "eslint": "^5.8.0",
     "eslint-config-xo-lass": "^1.0.3",
     "husky": "^1.1.2",
-    "lint-staged": "^8.0.3",
+    "lint-staged": "^8.0.4",
     "nyc": "^13.1.0",
-    "remark-cli": "5.x",
-    "remark-preset-github": "^0.0.9",
+    "remark-cli": "^6.0.0",
+    "remark-preset-github": "^0.0.12",
     "xo": "^0.23.0"
   },
   "engines": {
