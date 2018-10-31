@@ -173,7 +173,7 @@ module.exports = {
     const gh = ctx.answers.repo.replace('https://github.com/', '');
     [
       ctx.answers.repo,
-      `https://travis-ci.com}/${gh}`,
+      `https://travis-ci.com/${gh}`,
       `https://codecov.io/gh/${gh}`
     ].map(link => console.log(`TODO: ${link}`));
 
