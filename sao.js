@@ -64,7 +64,7 @@ module.exports = {
     },
     version: {
       message: 'Choose an initial semver version',
-      default: conf.get('init-version') || '1.0.0',
+      default: conf.get('init-version') || '0.0.0',
       validate: val => (semver.valid(val) ? true : 'Invalid semver version')
     },
     eslint: {
@@ -132,6 +132,20 @@ module.exports = {
       default(answers) {
         return `${answers.name} lass`;
       }
+    },
+    coverage: {
+      message: 'Check code coverage after tests run',
+      type: 'confirm',
+      default: false,
+      store: true
+    },
+    threshold: {
+      when: answers => answers.coverage,
+      type: 'list',
+      message:
+        'Select code coverage threshold required to pass (across lines/functions/branches)',
+      choices: [100, 90, 80, 70, 60, 50, 40, 30, 20, 10],
+      store: true
     }
   },
   move: {

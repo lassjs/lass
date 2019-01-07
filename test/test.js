@@ -9,7 +9,7 @@ const defaults = {
   name: 'lass',
   description: 'my project description',
   license: 'MIT',
-  version: '0.0.1',
+  version: '0.0.0',
   author: 'Nick Baugh',
   email: 'niftylettuce@gmail.com',
   website: 'http://niftylettuce.com',
@@ -22,7 +22,7 @@ test('auto detects email address from github', async t => {
     name: 'lass',
     description: 'test',
     license: 'MIT',
-    version: '0.0.1',
+    version: '0.0.0',
     author: 'TJ',
     email: 'tj@apex.sh',
     website: 'https://apex.sh'
@@ -41,7 +41,7 @@ test('allows SPDX licenses', async t => {
     name: 'lass',
     description: 'test',
     license,
-    version: '0.0.1',
+    version: '0.0.0',
     author: 'TJ',
     email: 'tj@apex.sh',
     website: 'https://apex.sh'
@@ -86,7 +86,7 @@ test('username retains capital letters', async t => {
 });
 
 test('invalid name', async t => {
-  const error = await t.throws(
+  const error = await t.throwsAsync(
     sao.mockPrompt(
       template,
       Object.assign({}, defaults, {
@@ -98,7 +98,7 @@ test('invalid name', async t => {
 });
 
 test('allows scope', async t => {
-  await t.notThrows(
+  await t.notThrowsAsync(
     sao.mockPrompt(
       template,
       Object.assign({}, defaults, {
@@ -109,7 +109,7 @@ test('allows scope', async t => {
 });
 
 test('invalid version', async t => {
-  const error = await t.throws(
+  const error = await t.throwsAsync(
     sao.mockPrompt(
       template,
       Object.assign({}, defaults, {
@@ -121,7 +121,7 @@ test('invalid version', async t => {
 });
 
 test('invalid email', async t => {
-  const error = await t.throws(
+  const error = await t.throwsAsync(
     sao.mockPrompt(
       template,
       Object.assign({}, defaults, {
@@ -133,7 +133,7 @@ test('invalid email', async t => {
 });
 
 test('invalid website', async t => {
-  const error = await t.throws(
+  const error = await t.throwsAsync(
     sao.mockPrompt(
       template,
       Object.assign({}, defaults, {
@@ -145,7 +145,7 @@ test('invalid website', async t => {
 });
 
 test('invalid username', async t => {
-  const error = await t.throws(
+  const error = await t.throwsAsync(
     sao.mockPrompt(
       template,
       Object.assign({}, defaults, {
@@ -157,7 +157,7 @@ test('invalid username', async t => {
 });
 
 test('invalid repo', async t => {
-  const error = await t.throws(
+  const error = await t.throwsAsync(
     sao.mockPrompt(
       template,
       Object.assign({}, defaults, {

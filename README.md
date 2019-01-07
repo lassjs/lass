@@ -39,6 +39,7 @@
   * [Test it](#test-it)
 * [Tips](#tips)
   * [Configuration](#configuration)
+  * [Version Bump and Release](#version-bump-and-release)
 * [Related](#related)
 * [Contributors](#contributors)
 * [Trademark Notice](#trademark-notice)
@@ -130,12 +131,16 @@ npm config set init-author-email "niftylettuce@gmail.com"
 npm config set init-author-name "Nick Baugh"
 npm config set init-author-url "http://niftylettuce.com"
 npm config set init-license "MIT"
-npm config set init-version "1.0.0"
+npm config set init-version "0.0.0"
 ```
 
 These defaults get utilized by `lass` when scaffolding a package and `npm init` in general.
 
 To check your existing configuration, run `npm config list -l`.
+
+### Version Bump and Release
+
+We highly recommend to use the tools [np][] and [release][] to version bump and release your package to GitHub and NPM.
 
 
 ## Related
@@ -166,7 +171,7 @@ If you are seeking permission to use these trademarks, then please [contact us](
 [MIT](LICENSE) © [Nick Baugh](http://niftylettuce.com)
 
 
-## 
+##
 
 <a href="#"><img src="https://cdn.rawgit.com/lassjs/lass/e39cd571/media/lass-footer.png" alt="#" /></a>
 
@@ -221,3 +226,7 @@ If you are seeking permission to use these trademarks, then please [contact us](
 [standard]: https://standardjs.com/
 
 [commitlint]: https://github.com/marionebl/commitlint
+
+[np]: https://github.com/sindresorhus/np
+
+[release]: https://github.com/zeit/release

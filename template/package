@@ -67,13 +67,15 @@
     ]
   },
   "main": "index.js",
+  <% if (coverage) { %>
   "nyc": {
     "check-coverage": true,
-    "lines": 100,
-    "functions": 100,
-    "branches": 100,
+    "lines": <%- threshold %>,
+    "functions": <%- threshold %>,
+    "branches": <%- threshold %>,
     "reporter": ["lcov", "html", "text"]
   },
+  <% } %>
   "remarkConfig": {
     "plugins": ["preset-github"]
   },
