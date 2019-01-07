@@ -76,6 +76,11 @@
     "reporter": ["lcov", "html", "text"]
   },
   <% } %>
+  <% if (public && name.startsWith('@')) { %>
+  "publishConfig": {
+    "access": "public"
+  },
+  <% } %>
   "remarkConfig": {
     "plugins": ["preset-github"]
   },
