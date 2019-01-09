@@ -11,21 +11,26 @@ const update = require('update-notifier');
 
 const pkg = require('./package');
 
-const cli = cac();
+const cli = cac('lass');
 
-cli.command('*', 'Generate a new package', input => {
-  const folderName = input[0] || '.';
-  const targetPath = path.resolve(folderName);
-  console.log(`> Generating package in ${targetPath}`);
+cli
+  .command('<name>', 'Generate a new package')
+  .action(name => {
+    const folderName = name;
+    const targetPath = path.resolve(folderName);
+    console.log(`> Generating package in ${targetPath}`);
 
-  const templatePath = path.dirname(require.resolve('./package'));
+    const templatePath = path.dirname(require.resolve('./package'));
 
-  return sao({
-    template: templatePath,
-    targetPath
-  });
-});
+    return sao({
+      template: templatePath,
+      targetPath
+    });
+  })
+  .example('lass my-new-project');
 
+cli.version(pkg.version);
+cli.help();
 cli.parse();
 
 update({ pkg }).notify();
