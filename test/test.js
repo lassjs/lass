@@ -30,6 +30,19 @@ test('auto detects email address from github', async t => {
   t.is(stream.meta.answers.username, 'tj');
 });
 
+test('allows GPL-3.0 license', async t => {
+  const stream = await sao.mockPrompt(template, {
+    name: 'lass',
+    description: 'test',
+    license: 'GPL-3.0',
+    version: '0.0.0',
+    author: 'TJ',
+    email: 'tj@apex.sh',
+    website: 'https://apex.sh'
+  });
+  t.is(stream.meta.answers.license, 'GPL-3.0');
+});
+
 test('allows SPDX licenses', async t => {
   const getRandomLicense = () => {
     return [...spdxLicenseList][

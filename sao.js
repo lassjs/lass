@@ -173,13 +173,13 @@ module.exports = {
           path.join(ctx.folderName, 'LICENSE'),
           spdxLicenseList[ctx.answers.license].licenseText
         );
-        console.log.warn(
+        console.warn(
           `You should update the ${ctx.chalk.yellow(
             'LICENSE'
           )} file accordingly (e.g. add your name/company/year)`
         );
       } catch (err) {
-        console.log.error(err);
+        console.error(err);
       }
     }
 
