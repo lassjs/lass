@@ -144,7 +144,7 @@ module.exports = {
       type: 'list',
       message:
         'Select code coverage threshold required to pass (across lines/functions/branches)',
-      choices: [100, 90, 80, 70, 60, 50, 40, 30, 20, 10],
+      choices: ['100', '90', '80', '70', '60', '50', '40', '30', '20', '10'],
       store: true
     }
   },

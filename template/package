@@ -70,9 +70,9 @@
   <% if (coverage) { %>
   "nyc": {
     "check-coverage": true,
-    "lines": <%- threshold %>,
-    "functions": <%- threshold %>,
-    "branches": <%- threshold %>,
+    "lines": <%- parseInt(threshold, 10) %>,
+    "functions": <%- parseInt(threshold, 10) %>,
+    "branches": <%- parseInt(threshold, 10) %>,
     "reporter": ["lcov", "html", "text"]
   },
   <% } %>
