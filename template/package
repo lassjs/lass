@@ -12,7 +12,10 @@
   "dependencies": {},
   "ava": {
     "failFast": true,
-    "verbose": true
+    "verbose": true,
+    "helpers": [
+      "test/helpers/**/*"
+    ]
   },
   "devDependencies": {
     "@commitlint/cli": "latest",
