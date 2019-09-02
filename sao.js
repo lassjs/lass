@@ -67,13 +67,6 @@ module.exports = {
       default: conf.get('init-version') || '0.0.0',
       validate: val => (semver.valid(val) ? true : 'Invalid semver version')
     },
-    eslint: {
-      message: 'Choose an eslint configuration',
-      choices: ['prettier', 'standard'],
-      type: 'list',
-      default: 'prettier',
-      store: true
-    },
     author: {
       message: "What is your name (the author's)",
       default: conf.get('init-author-name') || ':gitUser:',
@@ -201,9 +194,8 @@ module.exports = {
       ctx.npmInstall();
     }
 
-    // Format code according to eslint configuration
-    const linter = ctx.answers.eslint === 'standard' ? 'standard' : 'xo';
-    await execa(`./node_modules/.bin/${linter}`, ['--fix'], {
+    // Format code with xo
+    await execa(`./node_modules/.bin/xo`, ['--fix'], {
       cwd: ctx.folderPath,
       stdio: 'inherit'
     });

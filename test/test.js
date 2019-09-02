@@ -49,6 +49,7 @@ test('allows SPDX licenses', async t => {
       Math.floor(Math.random() * [...spdxLicenseList].length)
     ];
   };
+
   const license = getRandomLicense();
   const stream = await sao.mockPrompt(template, {
     name: 'lass',
@@ -69,12 +70,10 @@ test('allows SPDX licenses', async t => {
 // test.todo('logs error if soa fails to write license');
 
 test('defaults', async t => {
-  const stream = await sao.mockPrompt(
-    template,
-    Object.assign({}, defaults, {
-      name: 'my-package-name'
-    })
-  );
+  const stream = await sao.mockPrompt(template, {
+    ...defaults,
+    name: 'my-package-name'
+  });
 
   const ignoredFiles = ['yarn-error.log'];
   t.snapshot(
@@ -87,97 +86,63 @@ test('defaults', async t => {
 });
 
 test('username retains capital letters', async t => {
-  const stream = await sao.mockPrompt(
-    template,
-    Object.assign({}, defaults, {
-      name: 'my-package-name',
-      username: 'fooBar'
-    })
-  );
+  const stream = await sao.mockPrompt(template, {
+    ...defaults,
+    name: 'my-package-name',
+    username: 'fooBar'
+  });
   t.is(stream.meta.answers.username, 'fooBar');
   t.regex(stream.meta.answers.repo, /fooBar/);
 });
 
 test('invalid name', async t => {
   const error = await t.throwsAsync(
-    sao.mockPrompt(
-      template,
-      Object.assign({}, defaults, {
-        name: 'Foo Bar Baz Beep'
-      })
-    )
+    sao.mockPrompt(template, { ...defaults, name: 'Foo Bar Baz Beep' })
   );
   t.regex(error.message, /package name cannot have uppercase letters/);
 });
 
 test('allows scope', async t => {
   await t.notThrowsAsync(
-    sao.mockPrompt(
-      template,
-      Object.assign({}, defaults, {
-        name: '@foo/bar'
-      })
-    )
+    sao.mockPrompt(template, { ...defaults, name: '@foo/bar' })
   );
 });
 
 test('invalid version', async t => {
   const error = await t.throwsAsync(
-    sao.mockPrompt(
-      template,
-      Object.assign({}, defaults, {
-        version: 'abcdef'
-      })
-    )
+    sao.mockPrompt(template, { ...defaults, version: 'abcdef' })
   );
   t.regex(error.message, /Invalid semver version/);
 });
 
 test('invalid email', async t => {
   const error = await t.throwsAsync(
-    sao.mockPrompt(
-      template,
-      Object.assign({}, defaults, {
-        email: 'niftylettuce'
-      })
-    )
+    sao.mockPrompt(template, { ...defaults, email: 'niftylettuce' })
   );
   t.regex(error.message, /Invalid email/);
 });
 
 test('invalid website', async t => {
   const error = await t.throwsAsync(
-    sao.mockPrompt(
-      template,
-      Object.assign({}, defaults, {
-        website: 'niftylettuce'
-      })
-    )
+    sao.mockPrompt(template, { ...defaults, website: 'niftylettuce' })
   );
   t.regex(error.message, /Invalid URL/);
 });
 
 test('invalid username', async t => {
   const error = await t.throwsAsync(
-    sao.mockPrompt(
-      template,
-      Object.assign({}, defaults, {
-        username: '$$$'
-      })
-    )
+    sao.mockPrompt(template, { ...defaults, username: '$$$' })
   );
   t.regex(error.message, /Invalid GitHub username/);
 });
 
 test('invalid repo', async t => {
   const error = await t.throwsAsync(
-    sao.mockPrompt(
-      template,
-      Object.assign({}, defaults, {
-        username: 'lassjs',
-        repo: 'https://bitbucket.org/foo/bar'
-      })
-    )
+    sao.mockPrompt(template, {
+      ...defaults,
+      username: 'lassjs',
+      repo: 'https://bitbucket.org/foo/bar'
+    })
   );
   t.regex(
     error.message,

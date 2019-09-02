@@ -1,6 +1,6 @@
 class Script {
   constructor(config) {
-    config = Object.assign({}, config);
+    config = { ...config };
     this._name = config.name || 'script';
 
     this.renderName = this.renderName.bind(this);

@@ -24,19 +24,14 @@
     "codecov": "latest",
     "cross-env": "latest",
     "eslint": "latest",
-    "eslint-config-<%- eslint %>": "latest",
-    "eslint-plugin-<%- eslint %>": "latest",
     "fixpack": "latest",
     "husky": "latest",
     "lint-staged": "latest",
     "nyc": "latest",
-    "prettier": "latest",
     "remark-cli": "latest",
     "remark-preset-github": "latest",
-    <% if (eslint === 'prettier') { %>
     "eslint-config-xo-lass": "latest",
-    <% } %>
-    <%- eslint === 'standard' ? `"standard"`: `"xo"` %>: "latest"
+    "xo": "latest"
   },
   "engines": {
     "node": ">=8.3"
@@ -51,18 +46,12 @@
     }
   },
   "lint-staged": {
-    "linters": {
-      "*.js": [
-        <% if (eslint === 'standard') { %>
-        "standard --fix",
-        <% } else { %>
-        "xo --fix",
-        <% } %>
-        "git add"
-      ],
-      "*.md": ["remark . -qfo", "git add"],
-      "package.json": [ "fixpack", "git add" ]
-    }
+    "*.js": [
+      "xo --fix",
+      "git add"
+    ],
+    "*.md": ["remark . -qfo", "git add"],
+    "package.json": [ "fixpack", "git add" ]
   },
   "commitlint": {
     "extends": [
@@ -91,7 +80,6 @@
     "type": "git",
     "url": "<%- repo %>"
   },
-  <% if (eslint === 'prettier') { %>
   "prettier": {
     "singleQuote": true,
     "bracketSpacing": true,
@@ -102,14 +90,9 @@
     "space": true,
     "extends": [ "xo-lass" ]
   },
-  <% } %>
   "scripts": {
     "coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov",
-    <% if (eslint === 'prettier') { %>
     "lint": "xo && remark . -qfo",
-    <% } else { %>
-    "lint": "standard && remark . -qfo",
-    <% } %>
     "test": "npm run lint && npm run ava",
     "test-coverage": "npm run lint && npm run nyc",
     "ava": "cross-env NODE_ENV=test ava",

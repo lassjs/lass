@@ -50,7 +50,7 @@
 
 * Unit testing with [ava][]
 * Commit linting with [commitlint][]
-* Linting with [eslint][] (with an option to choose between [prettier][] and [xo][] or [standard][])
+* Linting with [xo][] (uses [eslint][] and [prettier][])
 * Markdown Linting with [remark][]
 * Automatic code formatting with [prettier][]
 * Automatic `git init`
@@ -222,8 +222,6 @@ If you are seeking permission to use these trademarks, then please [contact us](
 [cabin]: http://cabinjs.com
 
 [express]: https://expressjs.com
-
-[standard]: https://standardjs.com/
 
 [commitlint]: https://github.com/marionebl/commitlint
 
