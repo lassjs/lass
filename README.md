@@ -2,7 +2,7 @@
   <a href="https://lass.js.org"><img src="https://cdn.rawgit.com/lassjs/lass/e39cd571/media/lass.png" alt="Lass" /></a>
 </h1>
 <div align="center">
-  <a href="http://slack.crocodilejs.com"><img src="http://slack.crocodilejs.com/badge.svg" alt="chat" /></a>
+  <a href="https://slack.crocodilejs.com"><img src="https://slack.crocodilejs.com/badge.svg" alt="chat" /></a>
   <a href="https://travis-ci.com/lassjs/lass"><img src="https://travis-ci.com/lassjs/lass.svg?branch=master" alt="build status" /></a>
   <a href="https://codecov.io/github/lassjs/lass"><img src="https://img.shields.io/codecov/c/github/lassjs/lass/master.svg" alt="code coverage" /></a>
   <a href="https://github.com/sindresorhus/xo"><img src="https://img.shields.io/badge/code_style-XO-5ed9c7.svg" alt="code style" /></a>
@@ -171,7 +171,7 @@ If you are seeking permission to use these trademarks, then please [contact us](
 [MIT](LICENSE) © [Nick Baugh](http://niftylettuce.com)
 
 
-## 
+##
 
 <a href="#"><img src="https://cdn.rawgit.com/lassjs/lass/e39cd571/media/lass-footer.png" alt="#" /></a>
 
