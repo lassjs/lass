@@ -40,6 +40,7 @@
   "dependencies": {
     "cac": "^6.5.2",
     "camelcase": "^5.3.1",
+    "cross-spawn": "^7.0.0",
     "execa": "^2.0.4",
     "fixpack": "^2.3.1",
     "github-username": "^5.0.1",

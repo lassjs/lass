@@ -1,20 +1,22 @@
-const path = require('path');
 const fs = require('fs');
-const fixpack = require('fixpack');
+const path = require('path');
+
+const camelcase = require('camelcase');
 const execa = require('execa');
-const { which } = require('shelljs');
+const fetchGithubUsername = require('github-username');
+const fixpack = require('fixpack');
 const githubUsernameRegex = require('github-username-regex');
-const isURL = require('is-url');
 const isEmail = require('is-email');
+const isURL = require('is-url');
+const isValidNpmName = require('is-valid-npm-name');
+const npmConf = require('npm-conf');
 const semver = require('semver');
+const slug = require('speakingurl');
+const spawn = require('cross-spawn');
 const spdxLicenseList = require('spdx-license-list/full');
 const superb = require('superb');
-const camelcase = require('camelcase');
 const uppercamelcase = require('uppercamelcase');
-const slug = require('speakingurl');
-const npmConf = require('npm-conf');
-const isValidNpmName = require('is-valid-npm-name');
-const fetchGithubUsername = require('github-username');
+const { which } = require('shelljs');
 
 const conf = npmConf();
 
@@ -159,6 +161,24 @@ module.exports = {
   post: async ctx => {
     ctx.gitInit();
 
+    const gh = ctx.answers.repo
+      .replace('https://github.com/', '')
+      .replace('.git', '');
+
+    // <https://github.com/saojs/sao/issues/133>
+    const cmd = `remote add origin git@github.com:${gh}.git`;
+    const proc = spawn.sync('git', cmd.split(' '), {
+      cwd: ctx.folderPath,
+      stdio: 'inherit'
+    });
+    if (proc.error && proc.error.code === 'ENOENT') {
+      ctx.log.warn(
+        `${ctx.chalk.bold(
+          'git'
+        )} was not installed on this machine, therefore \`${cmd}\` was skipped.`
+      );
+    }
+
     // create `LICENSE` file with license selected
     if (ctx.answers.license !== 'MIT') {
       try {
@@ -166,18 +186,17 @@ module.exports = {
           path.join(ctx.folderName, 'LICENSE'),
           spdxLicenseList[ctx.answers.license].licenseText
         );
-        console.warn(
+        ctx.logger.warn(
           `You should update the ${ctx.chalk.yellow(
             'LICENSE'
           )} file accordingly (e.g. add your name/company/year)`
         );
       } catch (err) {
-        console.error(err);
+        ctx.logger.error(err);
       }
     }
 
     // Comment links for user
-    const gh = ctx.answers.repo.replace('https://github.com/', '');
     [
       ctx.answers.repo,
       `https://travis-ci.com/${gh}`,
