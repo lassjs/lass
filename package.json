@@ -41,6 +41,7 @@
     "cac": "^6.5.3",
     "camelcase": "^5.3.1",
     "cross-spawn": "^7.0.1",
+    "debug": "^4.1.1",
     "execa": "^3.4.0",
     "fixpack": "^2.3.1",
     "github-username": "^5.0.1",

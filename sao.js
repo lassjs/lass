@@ -2,6 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 const camelcase = require('camelcase');
+const debug = require('debug')('lass');
 const execa = require('execa');
 const fetchGithubUsername = require('github-username');
 const fixpack = require('fixpack');
@@ -95,7 +96,8 @@ module.exports = {
         try {
           const githubUsername = await fetchGithubUsername(answers.email);
           return githubUsername;
-        } catch {
+        } catch (err) {
+          debug(err);
           return ':gitUser:';
         }
       },
