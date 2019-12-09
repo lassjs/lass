@@ -91,11 +91,11 @@ module.exports = {
       store: true,
       default: async answers => {
         if (answers.name.indexOf('@') === 0)
-          return answers.name.split('/')[0].substring(1);
+          return answers.name.split('/')[0].slice(1);
         try {
           const githubUsername = await fetchGithubUsername(answers.email);
           return githubUsername;
-        } catch (err) {
+        } catch {
           return ':gitUser:';
         }
       },

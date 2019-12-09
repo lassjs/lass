@@ -1,10 +1,11 @@
 const test = require('ava');
 
-const { beforeEach, afterEach } = require('./helpers');
 const Script = require('..');
 
-test.beforeEach(beforeEach);
-test.afterEach(afterEach);
+test.beforeEach(t => {
+  const script = new Script({});
+  Object.assign(t.context, { script });
+});
 
 test('returns itself', t => {
   t.true(t.context.script instanceof Script);

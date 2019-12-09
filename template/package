@@ -10,13 +10,6 @@
   },
   "contributors": ["<%- author %> <<%- email %>> (<%- website%>)"],
   "dependencies": {},
-  "ava": {
-    "failFast": true,
-    "verbose": true,
-    "helpers": [
-      "test/helpers/**/*"
-    ]
-  },
   "devDependencies": {
     "@commitlint/cli": "latest",
     "@commitlint/config-conventional": "latest",
