@@ -34,7 +34,7 @@
   "license": "MIT",
   "husky": {
     "hooks": {
-      "pre-commit": "npm test",
+      "pre-commit": "lint-staged && npm test",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
