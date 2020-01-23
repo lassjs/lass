@@ -86,8 +86,8 @@
   "scripts": {
     "coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov",
     "lint": "xo && remark . -qfo",
-    "test": "npm run lint && npm run ava",
-    "test-coverage": "npm run lint && npm run nyc",
+    "test": "<%- pm %> run lint && <%- pm %> run ava",
+    "test-coverage": "<%- pm %> run lint && <%- pm %> run nyc",
     "ava": "cross-env NODE_ENV=test ava",
     "nyc": "cross-env NODE_ENV=test nyc ava"
   }
