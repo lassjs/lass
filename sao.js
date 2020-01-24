@@ -179,6 +179,19 @@ module.exports = {
           'git'
         )} was not installed on this machine, therefore \`${cmd}\` was skipped.`
       );
+    } else {
+      const addCmd = ['add', '-A'];
+      const commitCmd = [
+        'commit',
+        '-m',
+        'feat: initial commit from https://lass.js.org'
+      ];
+      spawn.sync('git', addCmd, {
+        cwd: ctx.folderPath
+      });
+      spawn.sync('git', commitCmd, {
+        cwd: ctx.folderPath
+      });
     }
 
     // create `LICENSE` file with license selected
