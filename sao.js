@@ -227,6 +227,23 @@ module.exports = {
       stdio: 'inherit'
     });
 
+    // Make initial commit
+    spawn.sync('git', ['add', '-A'], {
+      cwd: ctx.folderPath
+    });
+    spawn.sync(
+      'git',
+      [
+        'commit',
+        '-m',
+        'feat: initial commit from https://lass.js.org',
+        '--no-verify'
+      ],
+      {
+        cwd: ctx.folderPath
+      }
+    );
+
     ctx.showTip();
   }
 };
