@@ -149,3 +149,13 @@ test('invalid repo', async t => {
     /Please include a valid GitHub.com URL without a trailing slash/
   );
 });
+
+test('invalid description with double quoutes', async t => {
+  const error = await t.throwsAsync(
+    sao.mockPrompt(template, {
+      ...defaults,
+      description: 'My "awesome" project'
+    })
+  );
+  t.regex(error.message, /Description cannot contain double quotes/);
+});

@@ -44,7 +44,9 @@ module.exports = {
     },
     description: {
       message: 'How would you describe the new package',
-      default: `my ${superb.random()} project`
+      default: `my ${superb.random()} project`,
+      validate: val =>
+        /"/.test(val) ? 'Description cannot contain double quotes' : true
     },
     pm: {
       message: 'Choose a package manager',
