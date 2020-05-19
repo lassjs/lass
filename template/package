@@ -16,7 +16,7 @@
     "ava": "latest",
     "codecov": "latest",
     "cross-env": "latest",
-    "eslint": "latest",
+    "eslint": "6.x",
     "fixpack": "latest",
     "husky": "latest",
     "lint-staged": "latest",
@@ -24,7 +24,7 @@
     "remark-cli": "latest",
     "remark-preset-github": "latest",
     "eslint-config-xo-lass": "latest",
-    "xo": "latest"
+    "xo": "0.25"
   },
   "engines": {
     "node": ">=8.3"
@@ -37,14 +37,6 @@
       "pre-commit": "lint-staged && npm test",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
-  },
-  "lint-staged": {
-    "*.js": [
-      "xo --fix",
-      "git add"
-    ],
-    "*.md": ["remark . -qfo", "git add"],
-    "package.json": [ "fixpack", "git add" ]
   },
   "commitlint": {
     "extends": [
