@@ -3,12 +3,24 @@
   <% if (!public) { %>"private": true,<% } %>
   "description": "<%- description %>",
   "version": "<%- version %>",
-  "author": "<%- author %> <<%- email %>> (<%- website%>)",
-  "bugs": {
-    "url": "<%- repo %>/issues",
-    "email": "<%- email %>"
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "<%- repo %>"
   },
+  "author": "<%- author %> <<%- email %>> (<%- website%>)",
   "contributors": ["<%- author %> <<%- email %>> (<%- website%>)"],
+  "license": "MIT",
+  "scripts": {
+    "lint:js": "xo --extend xo-lass --prettier --space",
+    "lint:md": "remark . -qfo",
+    "lint": "<%- pm %> run lint:js && <%- pm %> run lint:md",
+    "pretest": "<%- pm %> run lint",
+    "test": "cross-env NODE_ENV=test ava",
+    "coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov",
+    "test-coverage": "cross-env NODE_ENV=test nyc <%- pm %> run test"
+  },
+  "keywords": [ <%- `${keywords.trim().split(/[, ]+/).map(k => `"${k.trim()}"`).join(', ')}` %> ],
   "dependencies": {},
   "devDependencies": {
     "@commitlint/cli": "latest",
@@ -27,60 +39,16 @@
     "xo": "0.25"
   },
   "engines": {
-    "node": ">=8.3"
+    "node": ">= 10"
+  },
+  "bugs": {
+    "url": "<%- repo %>/issues",
+    "email": "<%- email %>"
   },
   "homepage": "<%- repo %>",
-  "keywords": [ <%- `${keywords.trim().split(/[, ]+/).map(k => `"${k.trim()}"`).join(', ')}` %> ],
-  "license": "MIT",
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged && npm test",
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-    }
-  },
-  "commitlint": {
-    "extends": [
-      "@commitlint/config-conventional"
-    ]
-  },
-  "main": "index.js",
-  <% if (coverage) { %>
-  "nyc": {
-    "check-coverage": true,
-    "lines": <%- parseInt(threshold, 10) %>,
-    "functions": <%- parseInt(threshold, 10) %>,
-    "branches": <%- parseInt(threshold, 10) %>,
-    "reporter": ["lcov", "html", "text"]
-  },
-  <% } %>
   <% if (public && name.startsWith('@')) { %>
   "publishConfig": {
     "access": "public"
   },
   <% } %>
-  "remarkConfig": {
-    "plugins": ["preset-github"]
-  },
-  "repository": {
-    "type": "git",
-    "url": "<%- repo %>"
-  },
-  "prettier": {
-    "singleQuote": true,
-    "bracketSpacing": true,
-    "trailingComma": "none"
-  },
-  "xo": {
-    "prettier": true,
-    "space": true,
-    "extends": [ "xo-lass" ]
-  },
-  "scripts": {
-    "coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov",
-    "lint": "xo && remark . -qfo",
-    "test": "<%- pm %> run lint && <%- pm %> run ava",
-    "test-coverage": "<%- pm %> run lint && <%- pm %> run nyc",
-    "ava": "cross-env NODE_ENV=test ava",
-    "nyc": "cross-env NODE_ENV=test nyc ava"
-  }
 }
