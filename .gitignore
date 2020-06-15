@@ -1,6 +1,25 @@
+#       OS        #
+###################
 .DS_Store
-*.log
 .idea
+Thumbs.db
+tmp/
+temp/
+
+
+#     Node.js     #
+###################
 node_modules
+package-lock.json
+
+
+#       NYC       #
+###################
 coverage
+*.lcov
 .nyc_output
+
+
+#      Files      #
+###################
+*.log
