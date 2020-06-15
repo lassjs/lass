@@ -1,9 +1,12 @@
 language: node_js
 node_js:
-  - '12'
+  - 8
+  - 10
+  - 12
+  - 14
   - 'lts/*'
   - 'node'
 script:
-  npm run test-coverage
+  - npm run test-coverage
 after_success:
-  npm run coverage
+  - npm run coverage
