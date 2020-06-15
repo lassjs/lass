@@ -76,7 +76,7 @@
 
 ## Requirements
 
-Node.js v8.3.0+
+Node.js v10+
 
 
 ## Install
