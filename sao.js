@@ -39,6 +39,7 @@ module.exports = {
       default: () => process.argv[2] || ':folderName:',
       validate: val => {
         if (process.env.NODE_ENV === 'test' && val === 'lass') return true;
+
         return isValidNpmName(val);
       }
     },
@@ -95,6 +96,7 @@ module.exports = {
       default: async answers => {
         if (answers.name.indexOf('@') === 0)
           return answers.name.split('/')[0].slice(1);
+
         try {
           const githubUsername = await fetchGithubUsername(answers.email);
           return githubUsername;
@@ -156,9 +158,9 @@ module.exports = {
     package: 'package.json'
   },
   filters: {
-    // exclude MIT license from being copied
+    // Exclude MIT license from being copied
     LICENSE: 'license === "MIT"',
-    // until this issue is resolved we need this line:
+    // Until this issue is resolved we need this line:
     // <https://github.com/saojs/sao/issues/59>
     'node_modules/**': false
   },
@@ -183,7 +185,7 @@ module.exports = {
       );
     }
 
-    // create `LICENSE` file with license selected
+    // Create `LICENSE` file with license selected
     if (ctx.answers.license !== 'MIT') {
       try {
         fs.writeFileSync(
@@ -211,14 +213,11 @@ module.exports = {
     fixpack(`${ctx.folderPath}/package.json`);
 
     // Install packages
-    if (ctx.answers.pm === 'yarn') {
-      ctx.yarnInstall();
-    } else {
-      ctx.npmInstall();
-    }
+    if (ctx.answers.pm === 'yarn') ctx.yarnInstall();
+    else ctx.npmInstall();
 
     // Format code with xo
-    await execa(`./node_modules/.bin/xo`, ['--fix'], {
+    await execa('./node_modules/.bin/xo', ['--fix'], {
       cwd: ctx.folderPath,
       stdio: 'inherit'
     });

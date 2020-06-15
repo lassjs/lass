@@ -2,38 +2,58 @@
   "name": "lass",
   "description": "Lass scaffolds a modern package boilerplate for Node.js",
   "version": "2.2.1",
-  "author": "Nick Baugh <niftylettuce@gmail.com> (http://niftylettuce.com)",
-  "ava": {
-    "failFast": true,
-    "verbose": true,
-    "files": [
-      "test.js",
-      "test-*.js",
-      "test/**/*.js",
-      "**/__tests__/**/*.js",
-      "**/*.test.js",
-      "template/test.js",
-      "template/test-*.js",
-      "template/test/**/*.js",
-      "template/**/__tests__/**/*.js",
-      "template/**/*.test.js",
-      "!templates/test/helpers/**/*"
-    ]
-  },
+  "main": "sao.js",
   "bin": "cli.js",
-  "bugs": {
-    "url": "https://github.com/lassjs/lass/issues",
-    "email": "niftylettuce@gmail.com"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lassjs/lass"
   },
-  "commitlint": {
-    "extends": [
-      "@commitlint/config-conventional"
-    ]
-  },
+  "author": "Nick Baugh <niftylettuce@gmail.com> (http://niftylettuce.com)",
   "contributors": [
     "Nick Baugh <niftylettuce@gmail.com> (http://niftylettuce.com)",
     "Pablo Varela (http://pablo.life)",
-    "Shaun Warman <shaunwarman1@gmail.com> (http://shaunwarman.com)"
+    "Shaun Warman <shaunwarman1@gmail.com> (http://shaunwarman.com)",
+    "Imed Jaberi <imed_jebari@hotmail.fr> (https://www.3imed-jaberi.com)"
+  ],
+  "license": "MIT",
+
+  "scripts": {
+    "lint:js": "xo --extend xo-lass --prettier --space --ignore config.js",
+    "lint:md": "remark . -qfo",
+    "lint": "npm run lint:js && npm run lint:md",
+    "pretest": "npm run lint",
+    "test": "ava",
+    "coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov",
+    "test-coverage": "cross-env NODE_ENV=test nyc npm run test"
+  },
+  "keywords": [
+    "ava",
+    "boilerplate",
+    "codecov",
+    "es6",
+    "es7",
+    "flavored",
+    "generator",
+    "gfm",
+    "github",
+    "lass",
+    "license",
+    "license-generator",
+    "markdown",
+    "module",
+    "np",
+    "npm",
+    "nyc",
+    "package",
+    "prettier",
+    "project",
+    "remark",
+    "sao",
+    "scaffold",
+    "spdx",
+    "starter",
+    "xo",
+    "yeoman"
   ],
   "dependencies": {
     "cac": "^6.5.9",
@@ -73,82 +93,29 @@
     "remark-preset-github": "^1.0.1",
     "xo": "0.25"
   },
+  "ava": {
+    "failFast": true,
+    "verbose": true,
+    "files": [
+      "test.js",
+      "test-*.js",
+      "test/**/*.js",
+      "**/__tests__/**/*.js",
+      "**/*.test.js",
+      "template/test.js",
+      "template/test-*.js",
+      "template/test/**/*.js",
+      "template/**/__tests__/**/*.js",
+      "template/**/*.test.js",
+      "!templates/test/helpers/**/*"
+    ]
+  },
   "engines": {
-    "node": ">=8.3.0"
+    "node": ">= 10"
   },
-  "homepage": "https://lass.js.org",
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged && npm test",
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-    }
+  "bugs": {
+    "url": "https://github.com/lassjs/lass/issues",
+    "email": "niftylettuce@gmail.com"
   },
-  "keywords": [
-    "ava",
-    "boilerplate",
-    "codecov",
-    "es6",
-    "es7",
-    "flavored",
-    "generator",
-    "gfm",
-    "github",
-    "lass",
-    "license",
-    "license-generator",
-    "markdown",
-    "module",
-    "np",
-    "npm",
-    "nyc",
-    "package",
-    "prettier",
-    "project",
-    "remark",
-    "sao",
-    "scaffold",
-    "spdx",
-    "starter",
-    "xo",
-    "yeoman"
-  ],
-  "license": "MIT",
-  "main": "sao.js",
-  "nyc": {
-    "reporter": [
-      "lcov",
-      "html",
-      "text"
-    ]
-  },
-  "prettier": {
-    "singleQuote": true,
-    "bracketSpacing": true,
-    "trailingComma": "none"
-  },
-  "remarkConfig": {
-    "plugins": [
-      "preset-github"
-    ]
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/lassjs/lass"
-  },
-  "scripts": {
-    "coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov",
-    "lint": "xo && remark . -qfo",
-    "test": "npm run lint && npm run test-coverage",
-    "test-coverage": "cross-env NODE_ENV=test nyc ava"
-  },
-  "xo": {
-    "prettier": true,
-    "space": true,
-    "extends": [
-      "xo-lass"
-    ],
-    "ignores": [
-      "config.js"
-    ]
-  }
+  "homepage": "https://lass.js.org"
 }
