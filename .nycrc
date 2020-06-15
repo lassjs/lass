@@ -1,0 +1,12 @@
+{
+  "extension": [
+    ".js"
+  ],
+  "reporter": [
+    "lcov",
+    "html",
+    "text"
+  ],
+  "report-dir": "./coverage",
+  "temp-dir": "./.nyc_output"
+}
