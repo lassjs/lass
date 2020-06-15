@@ -76,7 +76,7 @@
 
 ## Requirements
 
-Node.js v7.6.0+
+Node.js v8.3.0+
 
 
 ## Install
@@ -152,11 +152,12 @@ We highly recommend to use the tools [np][] and [release][] to version bump and 
 
 ## Contributors
 
-| Name             | Website                   |
-| ---------------- | ------------------------- |
-| **Nick Baugh**   | <http://niftylettuce.com> |
-| **Pablo Varela** | <http://pablo.life>       |
-| **Shaun Warman** | <http://shaunwarman.com>  |
+| Name             | Website                        |
+| ---------------- | ------------------------------ |
+| **Nick Baugh**   | <http://niftylettuce.com>      |
+| **Pablo Varela** | <http://pablo.life>            |
+| **Shaun Warman** | <http://shaunwarman.com>       |
+| **Imed Jaberi**  | <https://www.3imed-jaberi.com> |
 
 
 ## Trademark Notice
