@@ -94,7 +94,7 @@ module.exports = {
       message: 'What is your GitHub username or organization',
       store: true,
       default: async answers => {
-        if (answers.name.indexOf('@') === 0) 
+        if (answers.name.indexOf('@') === 0)
           return answers.name.split('/')[0].slice(1);
 
         try {
