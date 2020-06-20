@@ -16,12 +16,12 @@
     "Imed Jaberi <imed_jebari@hotmail.fr> (https://www.3imed-jaberi.com)"
   ],
   "license": "MIT",
-
   "scripts": {
     "lint:js": "xo --extend xo-lass --prettier --space --ignore config.js",
     "lint:md": "remark . -qfo",
     "lint": "npm run lint:js && npm run lint:md",
     "pretest": "npm run lint",
+    "test:update-snap": "npm run test -- --update-snapshots",
     "test": "ava",
     "coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov",
     "test-coverage": "cross-env NODE_ENV=test nyc npm run test"

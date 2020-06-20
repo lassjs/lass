@@ -155,7 +155,8 @@ module.exports = {
     // `.gitignore` file will be ignored!
     gitignore: '.gitignore',
     README: 'README.md',
-    package: 'package.json'
+    package: 'package.json',
+    nycrc: '.nycrc'
   },
   filters: {
     // Exclude MIT license from being copied
