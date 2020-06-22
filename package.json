@@ -1,7 +1,7 @@
 {
   "name": "lass",
   "description": "Lass scaffolds a modern package boilerplate for Node.js",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "author": "Nick Baugh <niftylettuce@gmail.com> (http://niftylettuce.com)",
   "ava": {
     "failFast": true,
