@@ -12,7 +12,7 @@
   "contributors": ["<%- author %> <<%- email %>> (<%- website%>)"],
   "license": "MIT",
   "scripts": {
-    "lint:js": "xo --extend xo-lass --prettier --space",
+    "lint:js": "xo",
     "lint:md": "remark . -qfo",
     "lint": "<%- pm %> run lint:js && <%- pm %> run lint:md",
     "pretest": "<%- pm %> run lint",
@@ -37,6 +37,13 @@
     "remark-preset-github": "latest",
     "eslint-config-xo-lass": "latest",
     "xo": "0.25"
+  },
+  "xo": {
+    "prettier": true,
+    "space": true,
+    "extends": [
+      "xo-lass"
+    ]
   },
   "engines": {
     "node": ">= 10"
