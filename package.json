@@ -111,11 +111,21 @@
   "scripts": {
     "coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov",
     "lint": "npm run lint:js && npm run lint:md",
-    "lint:js": "xo --extend xo-lass --prettier --space --ignore config.js",
+    "lint:js": "xo",
     "lint:md": "remark . -qfo",
     "pretest": "npm run lint",
     "test": "ava",
     "test-coverage": "cross-env NODE_ENV=test nyc npm run test",
     "test:update-snap": "npm run test -- --update-snapshots"
+  },
+  "xo": {
+    "prettier": true,
+    "space": true,
+    "extends": [
+      "xo-lass"
+    ],
+    "ignores": [
+      "config.js"
+    ]
   }
 }
