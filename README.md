@@ -2,7 +2,7 @@
   <a href="https://lass.js.org"><img src="https://cdn.rawgit.com/lassjs/lass/e39cd571/media/lass.png" alt="Lass" /></a>
 </h1>
 <div align="center">
-  <a href="https://slack.crocodilejs.com"><img src="https://slack.crocodilejs.com/badge.svg" alt="chat" /></a>
+  <a href="https://join.slack.com/t/ladjs/shared_invite/zt-fqei6z11-Bq2trhwHQxVc5x~ifiZG0g"><img src="https://img.shields.io/badge/chat-join%20slack-brightgreen" alt="chat" /></a>
   <a href="https://travis-ci.com/lassjs/lass"><img src="https://travis-ci.com/lassjs/lass.svg?branch=master" alt="build status" /></a>
   <a href="https://codecov.io/github/lassjs/lass"><img src="https://img.shields.io/codecov/c/github/lassjs/lass/master.svg" alt="code coverage" /></a>
   <a href="https://github.com/sindresorhus/xo"><img src="https://img.shields.io/badge/code_style-XO-5ed9c7.svg" alt="code style" /></a>
