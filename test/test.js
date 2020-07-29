@@ -17,7 +17,7 @@ const defaults = {
   keywords: 'boilerplate,generator npm package lass'
 };
 
-test('auto detects email address from github', async t => {
+test('auto detects email address from github', async (t) => {
   const stream = await sao.mockPrompt(template, {
     name: 'lass',
     description: 'test',
@@ -30,7 +30,7 @@ test('auto detects email address from github', async t => {
   t.is(stream.meta.answers.username, 'tj');
 });
 
-test('allows GPL-3.0 license', async t => {
+test('allows GPL-3.0 license', async (t) => {
   const stream = await sao.mockPrompt(template, {
     name: 'lass',
     description: 'test',
@@ -43,7 +43,7 @@ test('allows GPL-3.0 license', async t => {
   t.is(stream.meta.answers.license, 'GPL-3.0');
 });
 
-test('allows SPDX licenses', async t => {
+test('allows SPDX licenses', async (t) => {
   const getRandomLicense = () => {
     return [...spdxLicenseList][
       Math.floor(Math.random() * [...spdxLicenseList].length)
@@ -69,15 +69,15 @@ test('allows SPDX licenses', async t => {
 //
 // test.todo('logs error if soa fails to write license');
 
-test('defaults', async t => {
+test('defaults', async (t) => {
   const stream = await sao.mockPrompt(template, {
     ...defaults,
     name: 'my-package-name'
   });
 
-  const ignoredFiles = ['yarn-error.log'];
+  const ignoredFiles = new Set(['yarn-error.log']);
   t.snapshot(
-    stream.fileList.filter(path => !ignoredFiles.includes(path)),
+    stream.fileList.filter((path) => !ignoredFiles.has(path)),
     'generated files'
   );
 
@@ -85,7 +85,7 @@ test('defaults', async t => {
   t.snapshot(content, 'content of README.md');
 });
 
-test('username retains capital letters', async t => {
+test('username retains capital letters', async (t) => {
   const stream = await sao.mockPrompt(template, {
     ...defaults,
     name: 'my-package-name',
@@ -95,48 +95,48 @@ test('username retains capital letters', async t => {
   t.regex(stream.meta.answers.repo, /fooBar/);
 });
 
-test('invalid name', async t => {
+test('invalid name', async (t) => {
   const error = await t.throwsAsync(
     sao.mockPrompt(template, { ...defaults, name: 'Foo Bar Baz Beep' })
   );
   t.regex(error.message, /package name cannot have uppercase letters/);
 });
 
-test('allows scope', async t => {
+test('allows scope', async (t) => {
   await t.notThrowsAsync(
     sao.mockPrompt(template, { ...defaults, name: '@foo/bar' })
   );
 });
 
-test('invalid version', async t => {
+test('invalid version', async (t) => {
   const error = await t.throwsAsync(
     sao.mockPrompt(template, { ...defaults, version: 'abcdef' })
   );
   t.regex(error.message, /Invalid semver version/);
 });
 
-test('invalid email', async t => {
+test('invalid email', async (t) => {
   const error = await t.throwsAsync(
     sao.mockPrompt(template, { ...defaults, email: 'niftylettuce' })
   );
   t.regex(error.message, /Invalid email/);
 });
 
-test('invalid website', async t => {
+test('invalid website', async (t) => {
   const error = await t.throwsAsync(
     sao.mockPrompt(template, { ...defaults, website: 'niftylettuce' })
   );
   t.regex(error.message, /Invalid URL/);
 });
 
-test('invalid username', async t => {
+test('invalid username', async (t) => {
   const error = await t.throwsAsync(
     sao.mockPrompt(template, { ...defaults, username: '$$$' })
   );
   t.regex(error.message, /Invalid GitHub username/);
 });
 
-test('invalid repo', async t => {
+test('invalid repo', async (t) => {
   const error = await t.throwsAsync(
     sao.mockPrompt(template, {
       ...defaults,
@@ -150,7 +150,7 @@ test('invalid repo', async t => {
   );
 });
 
-test('invalid description with double quoutes', async t => {
+test('invalid description with double quoutes', async (t) => {
   const error = await t.throwsAsync(
     sao.mockPrompt(template, {
       ...defaults,

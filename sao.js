@@ -37,17 +37,17 @@ module.exports = {
     name: {
       message: 'What is the name of the new package',
       default: () => process.argv[2] || ':folderName:',
-      validate: val => {
-        if (process.env.NODE_ENV === 'test' && val === 'lass') return true;
+      validate: (value) => {
+        if (process.env.NODE_ENV === 'test' && value === 'lass') return true;
 
-        return isValidNpmName(val);
+        return isValidNpmName(value);
       }
     },
     description: {
       message: 'How would you describe the new package',
       default: `my ${superb.random()} project`,
-      validate: val =>
-        /"/.test(val) ? 'Description cannot contain double quotes' : true
+      validate: (value) =>
+        /"/.test(value) ? 'Description cannot contain double quotes' : true
     },
     pm: {
       message: 'Choose a package manager',
@@ -71,7 +71,8 @@ module.exports = {
     version: {
       message: 'Choose an initial semver version',
       default: conf.get('init-version') || '0.0.0',
-      validate: val => (semver.valid(val) ? true : 'Invalid semver version')
+      validate: (value) =>
+        semver.valid(value) ? true : 'Invalid semver version'
     },
     author: {
       message: "What is your name (the author's)",
@@ -82,18 +83,18 @@ module.exports = {
       message: "What is your email (the author's)",
       default: conf.get('init-author-email') || ':gitEmail:',
       store: true,
-      validate: val => (isEmail(val) ? true : 'Invalid email')
+      validate: (value) => (isEmail(value) ? true : 'Invalid email')
     },
     website: {
       message: "What is your personal website (the author's)",
       default: conf.get('init-author-url') || '',
       store: true,
-      validate: val => (val === '' || isURL(val) ? true : 'Invalid URL')
+      validate: (value) => (value === '' || isURL(value) ? true : 'Invalid URL')
     },
     username: {
       message: 'What is your GitHub username or organization',
       store: true,
-      default: async answers => {
+      default: async (answers) => {
         if (answers.name.indexOf('@') === 0)
           return answers.name.split('/')[0].slice(1);
 
@@ -105,8 +106,8 @@ module.exports = {
           return ':gitUser:';
         }
       },
-      validate: val =>
-        githubUsernameRegex.test(val) ? true : 'Invalid GitHub username'
+      validate: (value) =>
+        githubUsernameRegex.test(value) ? true : 'Invalid GitHub username'
     },
     repo: {
       message: "What is your GitHub repository's URL",
@@ -119,10 +120,10 @@ module.exports = {
           maintainCase: true
         })}/${name}`;
       },
-      validate: val => {
-        return isURL(val) &&
-          val.indexOf('https://github.com/') === 0 &&
-          val.lastIndexOf('/') !== val.length - 1
+      validate: (value) => {
+        return isURL(value) &&
+          value.indexOf('https://github.com/') === 0 &&
+          value.lastIndexOf('/') !== value.length - 1
           ? true
           : 'Please include a valid GitHub.com URL without a trailing slash';
       }
@@ -141,7 +142,7 @@ module.exports = {
       store: true
     },
     threshold: {
-      when: answers => answers.coverage,
+      when: (answers) => answers.coverage,
       type: 'list',
       message:
         'Select code coverage threshold required to pass (across lines/functions/branches)',
@@ -165,7 +166,7 @@ module.exports = {
     // <https://github.com/saojs/sao/issues/59>
     'node_modules/**': false
   },
-  post: async ctx => {
+  post: async (ctx) => {
     ctx.gitInit();
 
     const gh = ctx.answers.repo
@@ -208,7 +209,7 @@ module.exports = {
       ctx.answers.repo,
       `https://travis-ci.com/${gh}`,
       `https://codecov.io/gh/${gh}`
-    ].map(link => console.log(`TODO: ${link}`));
+    ].map((link) => console.log(`TODO: ${link}`));
 
     // Fix package.json file
     fixpack(`${ctx.folderPath}/package.json`);

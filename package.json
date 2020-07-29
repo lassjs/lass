@@ -32,11 +32,11 @@
     "Imed Jaberi <imed_jebari@hotmail.fr> (https://www.3imed-jaberi.com)"
   ],
   "dependencies": {
-    "cac": "^6.5.10",
+    "cac": "^6.6.1",
     "camelcase": "^6.0.0",
     "cross-spawn": "^7.0.3",
     "debug": "^4.1.1",
-    "execa": "^4.0.2",
+    "execa": "^4.0.3",
     "fixpack": "^3.0.6",
     "github-username": "^5.0.1",
     "github-username-regex": "^1.0.0",
@@ -55,19 +55,19 @@
     "uppercamelcase": "^3.0.0"
   },
   "devDependencies": {
-    "@commitlint/cli": "^8.3.5",
-    "@commitlint/config-conventional": "^8.3.4",
-    "ava": "^3.9.0",
-    "codecov": "^3.7.0",
+    "@commitlint/cli": "^9.1.1",
+    "@commitlint/config-conventional": "^9.1.1",
+    "ava": "^3.11.0",
+    "codecov": "^3.7.2",
     "cross-env": "^7.0.2",
-    "eslint": "6.x",
+    "eslint": "^7.5.0",
     "eslint-config-xo-lass": "^1.0.3",
     "husky": "^4.2.5",
     "lint-staged": "^10.2.11",
     "nyc": "^15.1.0",
-    "remark-cli": "^8.0.0",
-    "remark-preset-github": "^2.0.0",
-    "xo": "0.25"
+    "remark-cli": "^8.0.1",
+    "remark-preset-github": "^3.0.0",
+    "xo": "^0.32.1"
   },
   "engines": {
     "node": ">= 10"

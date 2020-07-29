@@ -15,7 +15,7 @@ const cli = cac('lass');
 
 cli
   .command('<name>', 'Generate a new package')
-  .action(name => {
+  .action((name) => {
     const folderName = name;
     const targetPath = path.resolve(folderName);
     console.log(`> Generating package in ${targetPath}`);
