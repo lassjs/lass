@@ -3,12 +3,14 @@
     ".js"
   ],
   "report-dir": "./coverage",
-  "temp-dir": "./.nyc_output",
 <% if (coverage) { %>
+  "temp-dir": "./.nyc_output",
   "check-coverage": true,
   "lines": <%- parseInt(threshold, 10) %>,
   "functions": <%- parseInt(threshold, 10) %>,
   "branches": <%- parseInt(threshold, 10) %>,
   "reporter": ["lcov", "html", "text"]
+<% } else { %>
+  "temp-dir": "./.nyc_output"
 <% } %>
 }
