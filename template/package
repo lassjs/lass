@@ -28,7 +28,7 @@
     "ava": "latest",
     "codecov": "latest",
     "cross-env": "latest",
-    "eslint": "6.x",
+    "eslint": "latest",
     "fixpack": "latest",
     "husky": "latest",
     "lint-staged": "latest",
@@ -36,7 +36,7 @@
     "remark-cli": "latest",
     "remark-preset-github": "latest",
     "eslint-config-xo-lass": "latest",
-    "xo": "0.25"
+    "xo": "latest"
   },
   "xo": {
     "prettier": true,
