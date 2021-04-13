@@ -218,6 +218,43 @@ module.exports = {
     if (ctx.answers.pm === 'yarn') ctx.yarnInstall();
     else ctx.npmInstall();
 
+    // add husky hooks
+    await execa('./node_modules/.bin/husky', ['install'], {
+      cwd: ctx.folderPath,
+      stdio: 'inherit'
+    });
+
+    await Promise.all([
+      execa(
+        './node_modules/.bin/husky',
+        [
+          'add',
+          '.husky/commit-msg',
+          `${
+            ctx.answers.pm === 'yarn' ? 'yarn' : 'npx --no-install'
+          } commitlint --edit $1`
+        ],
+        {
+          cwd: ctx.folderPath,
+          stdio: 'inherit'
+        }
+      ),
+      execa(
+        './node_modules/.bin/husky',
+        [
+          'add',
+          '.husky/pre-commit',
+          `${
+            ctx.answers.pm === 'yarn' ? 'yarn' : 'npx --no-install'
+          } lint-staged`
+        ],
+        {
+          cwd: ctx.folderPath,
+          stdio: 'inherit'
+        }
+      )
+    ]);
+
     // Format code with xo
     await execa('./node_modules/.bin/xo', ['--fix'], {
       cwd: ctx.folderPath,
