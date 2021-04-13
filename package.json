@@ -29,7 +29,8 @@
     "Nick Baugh <niftylettuce@gmail.com> (http://niftylettuce.com)",
     "Pablo Varela (http://pablo.life)",
     "Shaun Warman <shaunwarman1@gmail.com> (http://shaunwarman.com)",
-    "Imed Jaberi <imed_jebari@hotmail.fr> (https://www.3imed-jaberi.com)"
+    "Imed Jaberi <imed_jebari@hotmail.fr> (https://www.3imed-jaberi.com)",
+    "Spencer Snyder <sasnyde2@gmail.com> (https://spencersnyder.io)"
   ],
   "dependencies": {
     "cac": "^6.7.2",
