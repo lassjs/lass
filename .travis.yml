@@ -2,6 +2,8 @@ language: node_js
 node_js:
   - 10
   - 12
+  - 14
+  - 15
 script:
   - npm run test-coverage
 after_success:
