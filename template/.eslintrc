@@ -1,0 +1,16 @@
+{
+  "root": true,
+  "extends": [
+    "plugin:node/recommended",
+    "plugin:import/recommended",
+    "plugin:promise/recommended",
+    "plugin:unicorn/recommended",
+    "plugin:ava/recommended",
+    "xo",
+    "plugin:prettier/recommended"
+  ],
+  "rules": {
+    "node/no-unpublished-require": "off",
+    "unicorn/prefer-module": "off"
+  }
+}

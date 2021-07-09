@@ -148,6 +148,13 @@ module.exports = {
         'Select code coverage threshold required to pass (across lines/functions/branches)',
       choices: ['100', '90', '80', '70', '60', '50', '40', '30', '20', '10'],
       store: true
+    },
+    linter: {
+      message: 'Choose a linter.',
+      choices: ['eslint', 'xo'],
+      type: 'list',
+      default: 'xo',
+      store: true
     }
   },
   move: {
@@ -164,7 +171,8 @@ module.exports = {
     LICENSE: 'license === "MIT"',
     // Until this issue is resolved we need this line:
     // <https://github.com/saojs/sao/issues/59>
-    'node_modules/**': false
+    'node_modules/**': false,
+    '.eslintrc': 'linter === "eslint"'
   },
   post: async (ctx) => {
     ctx.gitInit();
@@ -218,11 +226,55 @@ module.exports = {
     if (ctx.answers.pm === 'yarn') ctx.yarnInstall();
     else ctx.npmInstall();
 
-    // Format code with xo
-    await execa('./node_modules/.bin/xo', ['--fix'], {
+    // add husky hooks
+    await execa('./node_modules/.bin/husky', ['install'], {
       cwd: ctx.folderPath,
       stdio: 'inherit'
     });
+
+    await Promise.all([
+      execa(
+        './node_modules/.bin/husky',
+        [
+          'add',
+          '.husky/commit-msg',
+          `${
+            ctx.answers.pm === 'yarn' ? 'yarn' : 'npx --no-install'
+          } commitlint --edit $1`
+        ],
+        {
+          cwd: ctx.folderPath,
+          stdio: 'inherit'
+        }
+      ),
+      execa(
+        './node_modules/.bin/husky',
+        [
+          'add',
+          '.husky/pre-commit',
+          `${
+            ctx.answers.pm === 'yarn' ? 'yarn' : 'npx --no-install'
+          } lint-staged`
+        ],
+        {
+          cwd: ctx.folderPath,
+          stdio: 'inherit'
+        }
+      )
+    ]);
+
+    // Format code with xo
+    if (ctx.answers.linter === 'eslint') {
+      await execa('./node_modules/.bin/eslint', ['.', '--fix'], {
+        cwd: ctx.folderPath,
+        stdio: 'inherit'
+      });
+    } else {
+      await execa('./node_modules/.bin/xo', ['--fix'], {
+        cwd: ctx.folderPath,
+        stdio: 'inherit'
+      });
+    }
 
     // Run tests
     await execa(which(ctx.answers.pm).stdout, ['test'], {
