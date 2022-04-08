@@ -48,7 +48,7 @@
     "npm-conf": "^1.1.3",
     "sao": "0",
     "semver": "^7.3.5",
-    "shelljs": "^0.8.4",
+    "shelljs": "^0.8.5",
     "spdx-license-list": "^6.4.0",
     "speakingurl": "^14.0.1",
     "superb": "^4.0.0",
