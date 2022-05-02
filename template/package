@@ -46,7 +46,7 @@
     "husky": "latest",
     "lint-staged": "latest",
     "nyc": "latest",
-    "remark-cli": "latest",
+    "remark-cli": "^9.0.0",
     "remark-preset-github": "latest",
     <% if (linter==='xo') {%>
     "eslint-config-xo-lass": "latest",
