@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const process = require('process');
 
 const camelcase = require('camelcase');
 const debug = require('debug')('lass');
@@ -37,7 +38,7 @@ module.exports = {
     name: {
       message: 'What is the name of the new package',
       default: () => process.argv[2] || ':folderName:',
-      validate: (value) => {
+      validate(value) {
         if (process.env.NODE_ENV === 'test' && value === 'lass') return true;
 
         return isValidNpmName(value);
@@ -94,7 +95,7 @@ module.exports = {
     username: {
       message: 'What is your GitHub username or organization',
       store: true,
-      default: async (answers) => {
+      async default(answers) {
         if (answers.name.indexOf('@') === 0)
           return answers.name.split('/')[0].slice(1);
 
@@ -120,7 +121,7 @@ module.exports = {
           maintainCase: true
         })}/${name}`;
       },
-      validate: (value) => {
+      validate(value) {
         return isURL(value) &&
           value.indexOf('https://github.com/') === 0 &&
           value.lastIndexOf('/') !== value.length - 1
@@ -174,7 +175,7 @@ module.exports = {
     'node_modules/**': false,
     '.eslintrc': 'linter === "eslint"'
   },
-  post: async (ctx) => {
+  async post(ctx) {
     ctx.gitInit();
 
     const gh = ctx.answers.repo
