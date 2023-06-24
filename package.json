@@ -52,7 +52,7 @@
     "spdx-license-list": "^6.5.0",
     "speakingurl": "^14.0.1",
     "superb": "^4.0.0",
-    "update-notifier": "^5.1.0",
+    "update-notifier": "^6.0.0",
     "uppercamelcase": "^3.0.0"
   },
   "devDependencies": {
