@@ -37,7 +37,7 @@
     "camelcase": "^6.3.0",
     "cross-spawn": "^7.0.3",
     "debug": "^4.3.4",
-    "execa": "5",
+    "execa": "9.6.0",
     "fixpack": "^4.0.0",
     "github-username": "6",
     "github-username-regex": "^1.0.0",
